@@ -1,0 +1,472 @@
+<?xml version="1.0"?>
+
+<robot
+  name="pigeon_2">
+  <link
+    name="torso">
+    <inertial>
+      <origin
+        xyz="-0.0629726051612279 -0.0795364123806518 -0.0718210124188262"
+        rpy="0 0 0" />
+      <mass
+        value="0.266434381824894" />
+      <inertia
+        ixx="0.000802279648814762"
+        ixy="-6.01071168675817E-09"
+        ixz="-2.28894767817414E-07"
+        iyy="0.000856466713994411"
+        iyz="-1.49702779014899E-05"
+        izz="0.000163373268213445" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/torso.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+  </link>
+  <link
+    name="tail">
+    <inertial>
+      <origin
+        xyz="-0.062961900175268 0 0.0652517307094301"
+        rpy="0 0 0" />
+      <mass
+        value="0.0104416003203597" />
+      <inertia
+        ixx="8.64461037470949E-06"
+        ixy="-7.21973578393939E-23"
+        ixz="6.03299249781676E-22"
+        iyy="4.22711253965379E-05"
+        iyz="7.43321561626207E-24"
+        izz="3.36540333334971E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/tail.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="tail_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.025744 -0.072407"
+      rpy="1.5708 0 0" />
+    <parent
+      link="torso" />
+    <child
+      link="tail" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="ls_ghost_one">
+  </link>
+  <joint
+    name="lsr_ghost"
+    type="continuous">
+    <origin
+      xyz="-0.10496 0.11726 -0.072407"
+      rpy="1.5708 0 0" />
+    <parent
+      link="torso" />
+    <child
+      link="ls_ghost_one" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="ls_ghost_two">
+  </link>
+  <joint
+    name="lsp_ghost"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.005"
+      rpy="0 0 0" />
+    <parent
+      link="ls_ghost_one" />
+    <child
+      link="ls_ghost_two" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="left_upper_wing">
+    <inertial>
+      <origin
+        xyz="-0.0218027728742861 0.00425638927508182 0.0543039239207449"
+        rpy="0 0 0" />
+      <mass
+        value="0.00478467934314604" />
+      <inertia
+        ixx="3.47747506697267E-06"
+        ixy="-1.43326598489558E-12"
+        ixz="-4.41899816252946E-07"
+        iyy="4.15090260308391E-06"
+        iyz="-3.28097162591433E-12"
+        izz="6.85803263309496E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left_upper_wing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="lsy"
+    type="continuous">
+    <origin
+      xyz="0 -0.00425640192706056 0"
+      rpy="0 0 0" />
+    <parent
+      link="ls_ghost_two" />
+    <child
+      link="left_upper_wing" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="le_ghost_one">
+  </link>
+  <joint
+    name="ler_ghost"
+    type="continuous">
+    <origin
+      xyz="-0.0419980875771034 0.00425640192706056 0.0100543231592249"
+      rpy="0 0 0" />
+    <parent
+      link="left_upper_wing" />
+    <child
+      link="le_ghost_one" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="le_ghost_two">
+  </link>
+  <joint
+    name="lep_ghost"
+    type="continuous">
+    <origin
+      xyz="0 0 0.005"
+      rpy="0 0 0" />
+    <parent
+      link="le_ghost_one" />
+    <child
+      link="le_ghost_two" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="left_mid_wing">
+    <inertial>
+      <origin
+        xyz="-0.0461463515315644 7.03928810380505E-08 0.0495486671552646"
+        rpy="0 0 0" />
+      <mass
+        value="0.00923222139282927" />
+      <inertia
+        ixx="1.13159761781576E-05"
+        ixy="-2.18214269950252E-11"
+        ixz="1.65204671390405E-06"
+        iyy="1.76124962714534E-05"
+        iyz="1.10157923191602E-12"
+        izz="6.32076926607797E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left_mid_wing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="ley"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="le_ghost_two" />
+    <child
+      link="left_mid_wing" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="left_hand_wing">
+    <inertial>
+      <origin
+        xyz="-0.0597835085302463 3.75240510469554E-08 0.0458134593577523"
+        rpy="0 0 0" />
+      <mass
+        value="0.0060554606877355" />
+      <inertia
+        ixx="4.30150593202078E-06"
+        ixy="-7.42091509392946E-12"
+        ixz="-1.56448140245737E-06"
+        iyy="1.33027596466077E-05"
+        iyz="4.77100516709796E-13"
+        izz="9.01715785909737E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left_hand_wing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="lwr"
+    type="continuous">
+    <origin
+      xyz="-0.0929625657844593 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="left_mid_wing" />
+    <child
+      link="left_hand_wing" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="rs_ghost_one">
+  </link>
+  <joint
+    name="rsr_ghost"
+    type="continuous">
+    <origin
+      xyz="-0.020961900175268 0.117255823661434 -0.0724066467540735"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="torso" />
+    <child
+      link="rs_ghost_one" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="rs_ghost_two">
+  </link>
+  <joint
+    name="rsp_ghost"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.005"
+      rpy="0 0 0" />
+    <parent
+      link="rs_ghost_one" />
+    <child
+      link="rs_ghost_two" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="right_upper_wing">
+    <inertial>
+      <origin
+        xyz="-0.0218027728742861 -0.00425641457903929 0.0543039239207449"
+        rpy="0 0 0" />
+      <mass
+        value="0.00478467934314606" />
+      <inertia
+        ixx="3.47747506697268E-06"
+        ixy="-1.4332659847642E-12"
+        ixz="-4.41899816252945E-07"
+        iyy="4.15090260308392E-06"
+        iyz="-3.28097162587743E-12"
+        izz="6.858032633095E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right_upper_wing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="rsy"
+    type="continuous">
+    <origin
+      xyz="0 -0.00425640192706056 0"
+      rpy="0 0 3.14159265358979" />
+    <parent
+      link="rs_ghost_two" />
+    <child
+      link="right_upper_wing" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="re_ghost_one">
+  </link>
+  <joint
+    name="rer_ghost"
+    type="continuous">
+    <origin
+      xyz="-0.0419980875771034 -0.00425640192706056 0.0100543231592249"
+      rpy="0 0 3.14159265358979" />
+    <parent
+      link="right_upper_wing" />
+    <child
+      link="re_ghost_one" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="re_ghost_two">
+  </link>
+  <joint
+    name="rep_ghost"
+    type="continuous">
+    <origin
+      xyz="0 0 0.005"
+      rpy="0 0 0" />
+    <parent
+      link="re_ghost_one" />
+    <child
+      link="re_ghost_two" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="right_mid_wing">
+    <inertial>
+      <origin
+        xyz="-0.0461463515315643 7.03928811907062E-08 0.0495486671552646"
+        rpy="0 0 0" />
+      <mass
+        value="0.00923222139282931" />
+      <inertia
+        ixx="1.13159761781579E-05"
+        ixy="-2.18214270155378E-11"
+        ixz="1.65204671390375E-06"
+        iyy="1.76124962714539E-05"
+        iyz="1.10157922671055E-12"
+        izz="6.32076926607812E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right_mid_wing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="rey"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 -3.14159265358979" />
+    <parent
+      link="re_ghost_two" />
+    <child
+      link="right_mid_wing" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="right_hand_wing">
+    <inertial>
+      <origin
+        xyz="-0.0597835085302467 3.75240510469554E-08 0.0458134593577522"
+        rpy="0 0 0" />
+      <mass
+        value="0.00605546068773547" />
+      <inertia
+        ixx="4.30150593202328E-06"
+        ixy="-7.42091509393028E-12"
+        ixz="-1.56448140245762E-06"
+        iyy="1.33027596466106E-05"
+        iyz="4.77100516322324E-13"
+        izz="9.01715785909773E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right_hand_wing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="rwr"
+    type="continuous">
+    <origin
+      xyz="-0.0929625657844593 0 0"
+      rpy="0 0 -3.12250225675825E-15" />
+    <parent
+      link="right_mid_wing" />
+    <child
+      link="right_hand_wing" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+</robot>
