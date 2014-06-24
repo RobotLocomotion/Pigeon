@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+
+<robot name="ball_and_socket_test">
+
+  <link name="base">
+    <inertial>
+      <mass value="0.266434381824894" />
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="0.083" />
+    </inertial>
+    <visual>
+      <geometry>
+         <box size=".2 .2 .2" />
+      </geometry>
+      <material name="green">
+      	<color rgba="0 1 0 1" />
+      </material>
+    </visual>
+  </link>
+
+  <link
+    name="ghost_one">
+    <inertial>
+      <mass
+        value="0" />
+    </inertial>
+  </link>
+
+  <link
+    name="ghost_two">
+    <inertial>
+      <mass
+        value="0" />
+    </inertial>
+  </link>
+
+  <link name="wing">
+    <inertial>
+      <origin xyz=".5 0 0" rpy="0 0 0" />
+      <mass value="0.020072361" />
+      <inertia ixx="0.01004872572" ixy="0" ixz="0" iyy="0.01004872572" iyz="0" izz="0.00002509045" />
+    </inertial>
+    <visual>
+      <origin xyz=".5 0 0" rpy="0 1.5708 0" />
+      <geometry>
+         <cylinder length="1" radius=".05" />
+      </geometry>
+      <material name="red">
+	      <color rgba="1 0 0 1" />
+      </material>
+    </visual>
+  </link>
+
+  <joint name="shoulder_z" type="continuous">
+    <parent link="base" />
+    <child link="ghost_one" />
+    <origin xyz="0 0 0" />
+    <axis xyz="0 0 1" />
+    <dynamics damping="0.0005" />
+  </joint>
+
+  <joint name="shoulder_x" type="continuous">
+    <parent link="ghost_one" />
+    <child link="ghost_two" />
+    <origin xyz="0 0 0" />
+    <axis xyz="1 0 0" />
+    <dynamics damping="0.0005" />
+  </joint>
+
+  <joint name="shoulder_y" type="continuous">
+    <parent link="ghost_two" />
+    <child link="wing" />
+    <origin xyz="0 0 0" />
+    <axis xyz="0 -1 0" />
+    <dynamics damping="0.0005" />
+  </joint>
+
+</robot>

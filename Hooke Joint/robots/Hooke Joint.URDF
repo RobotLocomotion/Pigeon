@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+
+<robot
+  name="Hooke Joint">
+  <link
+    name="upper_base">
+    <inertial>
+      <origin
+        xyz="-0.0282351668165584 -0.0370788696550025 -0.024437045807513"
+        rpy="0 0 0" />
+      <mass
+        value="0.0192745718914701" />
+      <inertia
+        ixx="1.28460196633445E-05"
+        ixy="4.18279240957586E-12"
+        ixz="-2.83049204007825E-11"
+        iyy="3.79971218103438E-05"
+        iyz="-3.48866061734864E-12"
+        izz="2.56762312609378E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/upper_base.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+  </link>
+  <link
+    name="hinge">
+    <inertial>
+      <origin
+        xyz="-0.0282351124157285 -6.93889390390723E-18 8.67361737988404E-19"
+        rpy="0 0 0" />
+      <mass
+        value="0.0134704583933221" />
+      <inertia
+        ixx="2.37950057998405E-06"
+        ixy="2.06997668326993E-22"
+        ixz="2.09382605949359E-22"
+        iyy="8.82630456148924E-06"
+        iyz="-1.9216513233946E-12"
+        izz="1.1035751153805E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/hinge.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="roll"
+    type="continuous">
+    <origin
+      xyz="0 -0.00612083368241656 -0.0370788555826289"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="upper_base" />
+    <child
+      link="hinge" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="lower_base">
+    <inertial>
+      <origin
+        xyz="-2.50286171232794E-08 0.0196430125986808 -1.69030434787887E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0143237281450084" />
+      <inertia
+        ixx="6.16716875549629E-06"
+        ixy="4.04458551726031E-12"
+        ixz="1.06806599956663E-12"
+        iyy="7.11968059662454E-06"
+        iyz="2.54375756908545E-13"
+        izz="1.28235899888829E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/lower_base.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="yaw"
+    type="continuous">
+    <origin
+      xyz="-0.0282350830231053 0 0"
+      rpy="1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="hinge" />
+    <child
+      link="lower_base" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="wing">
+    <inertial>
+      <origin
+        xyz="6.93889390390723E-18 0 -0.0254865234840721"
+        rpy="0 0 0" />
+      <mass
+        value="0.0484292036732051" />
+      <inertia
+        ixx="1.1656263365677E-05"
+        ixy="3.84274599483281E-22"
+        ixz="-2.29524574688779E-22"
+        iyy="2.0406263365677E-05"
+        iyz="4.65320355964223E-22"
+        izz="1.20636983792484E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/wing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="pitch"
+    type="continuous">
+    <origin
+      xyz="0 0.05 0"
+      rpy="1.5707963267949 1.5707963267949 0" />
+    <parent
+      link="lower_base" />
+    <child
+      link="wing" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+</robot>

@@ -2,6 +2,11 @@
 
 <robot
   name="pigeon_2">
+
+
+
+
+
   <link
     name="torso">
     <inertial>
@@ -33,6 +38,7 @@
       </material>
     </visual>
   </link>
+
   <link
     name="tail">
     <inertial>
@@ -64,51 +70,23 @@
       </material>
     </visual>
   </link>
-  <joint
-    name="tail_joint"
-    type="continuous">
-    <origin
-      xyz="0 -0.025744 -0.072407"
-      rpy="1.5708 0 0" />
-    <parent
-      link="torso" />
-    <child
-      link="tail" />
-    <axis
-      xyz="-1 0 0" />
-  </joint>
+
   <link
     name="ls_ghost_one">
+    <inertial>
+      <mass
+        value="0" />
+    </inertial>
   </link>
-  <joint
-    name="lsr_ghost"
-    type="continuous">
-    <origin
-      xyz="-0.10496 0.11726 -0.072407"
-      rpy="1.5708 0 0" />
-    <parent
-      link="torso" />
-    <child
-      link="ls_ghost_one" />
-    <axis
-      xyz="0 0 -1" />
-  </joint>
+
   <link
     name="ls_ghost_two">
+    <inertial>
+      <mass
+        value="0" />
+    </inertial>
   </link>
-  <joint
-    name="lsp_ghost"
-    type="continuous">
-    <origin
-      xyz="0 0 -0.005"
-      rpy="0 0 0" />
-    <parent
-      link="ls_ghost_one" />
-    <child
-      link="ls_ghost_two" />
-    <axis
-      xyz="-1 0 0" />
-  </joint>
+
   <link
     name="left_upper_wing">
     <inertial>
@@ -140,61 +118,35 @@
       </material>
     </visual>
   </link>
-  <joint
-    name="lsy"
-    type="continuous">
-    <origin
-      xyz="0 -0.00425640192706056 0"
-      rpy="0 0 0" />
-    <parent
-      link="ls_ghost_two" />
-    <child
-      link="left_upper_wing" />
-    <axis
-      xyz="0 -1 0" />
-  </joint>
+
   <link
     name="le_ghost_one">
+    <inertial>
+      <mass
+        value="0" />
+    </inertial>
   </link>
-  <joint
-    name="ler_ghost"
-    type="continuous">
-    <origin
-      xyz="-0.0419980875771034 0.00425640192706056 0.0100543231592249"
-      rpy="0 0 0" />
-    <parent
-      link="left_upper_wing" />
-    <child
-      link="le_ghost_one" />
-    <axis
-      xyz="0 0 -1" />
-  </joint>
+
   <link
     name="le_ghost_two">
+    <inertial>
+      <mass
+        value="0" />
+    </inertial>
   </link>
-  <joint
-    name="lep_ghost"
-    type="continuous">
-    <origin
-      xyz="0 0 0.005"
-      rpy="0 0 0" />
-    <parent
-      link="le_ghost_one" />
-    <child
-      link="le_ghost_two" />
-    <axis
-      xyz="-1 0 0" />
-  </joint>
+
   <link
     name="left_mid_wing">
     <inertial>
       <origin
         xyz="-0.0461463515315644 7.03928810380505E-08 0.0495486671552646"
+
         rpy="0 0 0" />
       <mass
         value="0.00923222139282927" />
       <inertia
         ixx="1.13159761781576E-05"
+
         ixy="-2.18214269950252E-11"
         ixz="1.65204671390405E-06"
         iyy="1.76124962714534E-05"
@@ -207,6 +159,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
+
           filename="../meshes/left_mid_wing.STL" />
       </geometry>
       <material
@@ -216,19 +169,7 @@
       </material>
     </visual>
   </link>
-  <joint
-    name="ley"
-    type="continuous">
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <parent
-      link="le_ghost_two" />
-    <child
-      link="left_mid_wing" />
-    <axis
-      xyz="0 -1 0" />
-  </joint>
+
   <link
     name="left_hand_wing">
     <inertial>
@@ -260,51 +201,23 @@
       </material>
     </visual>
   </link>
-  <joint
-    name="lwr"
-    type="continuous">
-    <origin
-      xyz="-0.0929625657844593 0 0"
-      rpy="0 0 0" />
-    <parent
-      link="left_mid_wing" />
-    <child
-      link="left_hand_wing" />
-    <axis
-      xyz="0 0 -1" />
-  </joint>
+
   <link
     name="rs_ghost_one">
+    <inertial>
+      <mass
+        value="0.000000001" />
+    </inertial>
   </link>
-  <joint
-    name="rsr_ghost"
-    type="continuous">
-    <origin
-      xyz="-0.020961900175268 0.117255823661434 -0.0724066467540735"
-      rpy="1.5707963267949 0 0" />
-    <parent
-      link="torso" />
-    <child
-      link="rs_ghost_one" />
-    <axis
-      xyz="0 0 -1" />
-  </joint>
+
   <link
     name="rs_ghost_two">
+    <inertial>
+      <mass
+        value="0.000000001" />
+    </inertial>
   </link>
-  <joint
-    name="rsp_ghost"
-    type="continuous">
-    <origin
-      xyz="0 0 -0.005"
-      rpy="0 0 0" />
-    <parent
-      link="rs_ghost_one" />
-    <child
-      link="rs_ghost_two" />
-    <axis
-      xyz="-1 0 0" />
-  </joint>
+
   <link
     name="right_upper_wing">
     <inertial>
@@ -312,10 +225,12 @@
         xyz="-0.0218027728742861 -0.00425641457903929 0.0543039239207449"
         rpy="0 0 0" />
       <mass
+
         value="0.00478467934314606" />
       <inertia
         ixx="3.47747506697268E-06"
         ixy="-1.4332659847642E-12"
+
         ixz="-4.41899816252945E-07"
         iyy="4.15090260308392E-06"
         iyz="-3.28097162587743E-12"
@@ -336,51 +251,23 @@
       </material>
     </visual>
   </link>
-  <joint
-    name="rsy"
-    type="continuous">
-    <origin
-      xyz="0 -0.00425640192706056 0"
-      rpy="0 0 3.14159265358979" />
-    <parent
-      link="rs_ghost_two" />
-    <child
-      link="right_upper_wing" />
-    <axis
-      xyz="0 1 0" />
-  </joint>
+
   <link
     name="re_ghost_one">
+    <inertial>
+      <mass
+        value="0" />
+    </inertial>
   </link>
-  <joint
-    name="rer_ghost"
-    type="continuous">
-    <origin
-      xyz="-0.0419980875771034 -0.00425640192706056 0.0100543231592249"
-      rpy="0 0 3.14159265358979" />
-    <parent
-      link="right_upper_wing" />
-    <child
-      link="re_ghost_one" />
-    <axis
-      xyz="0 0 -1" />
-  </joint>
+
   <link
     name="re_ghost_two">
+    <inertial>
+      <mass
+        value="0" />
+    </inertial>
   </link>
-  <joint
-    name="rep_ghost"
-    type="continuous">
-    <origin
-      xyz="0 0 0.005"
-      rpy="0 0 0" />
-    <parent
-      link="re_ghost_one" />
-    <child
-      link="re_ghost_two" />
-    <axis
-      xyz="-1 0 0" />
-  </joint>
+
   <link
     name="right_mid_wing">
     <inertial>
@@ -391,6 +278,7 @@
         value="0.00923222139282931" />
       <inertia
         ixx="1.13159761781579E-05"
+
         ixy="-2.18214270155378E-11"
         ixz="1.65204671390375E-06"
         iyy="1.76124962714539E-05"
@@ -406,35 +294,26 @@
           filename="../meshes/right_mid_wing.STL" />
       </geometry>
       <material
+
         name="">
         <color
           rgba="0.5 0.5 0.5 1" />
       </material>
     </visual>
   </link>
-  <joint
-    name="rey"
-    type="continuous">
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 -3.14159265358979" />
-    <parent
-      link="re_ghost_two" />
-    <child
-      link="right_mid_wing" />
-    <axis
-      xyz="0 1 0" />
-  </joint>
+
   <link
     name="right_hand_wing">
     <inertial>
       <origin
+
         xyz="-0.0597835085302467 3.75240510469554E-08 0.0458134593577522"
         rpy="0 0 0" />
       <mass
         value="0.00605546068773547" />
       <inertia
         ixx="4.30150593202328E-06"
+
         ixy="-7.42091509393028E-12"
         ixz="-1.56448140245762E-06"
         iyy="1.33027596466106E-05"
@@ -452,10 +331,245 @@
       <material
         name="">
         <color
+
           rgba="0.5 0.5 0.5 1" />
       </material>
     </visual>
   </link>
+
+
+
+
+
+
+
+
+
+
+  <joint
+    name="tail_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.025744 -0.072407"
+      rpy="1.5708 0 0" />
+    <parent
+      link="torso" />
+    <child
+      link="tail" />
+    <axis
+      xyz="-1 0 0" />
+    <dynamics
+      damping="0.0005" />
+  </joint>
+
+  <joint
+    name="lsr_ghost"
+    type="continuous">
+    <origin
+      xyz="-0.10496 0.11726 -0.072407"
+      rpy="1.5708 0 0" />
+    <parent
+      link="torso" />
+    <child
+      link="ls_ghost_one" />
+    <axis
+      xyz="0 0 -1" />
+    <dynamics
+      damping="0.0005" />
+  </joint>
+
+  <joint
+    name="lsp_ghost"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.005"
+      rpy="0 0 0" />
+    <parent
+      link="ls_ghost_one" />
+    <child
+      link="ls_ghost_two" />
+    <axis
+      xyz="-1 0 0" />
+    <dynamics
+      damping="0.0005" />
+  </joint>
+
+  <joint
+    name="lsy"
+    type="continuous">
+    <origin
+      xyz="0 -0.00425640192706056 0"
+      rpy="0 0 0" />
+    <parent
+      link="ls_ghost_two" />
+    <child
+      link="left_upper_wing" />
+    <axis
+      xyz="0 -1 0" />
+    <dynamics
+      damping="0.0005" />
+  </joint>
+
+  <joint
+    name="ler_ghost"
+    type="continuous">
+    <origin
+      xyz="-0.0419980875771034 0.00425640192706056 0.0100543231592249"
+      rpy="0 0 0" />
+    <parent
+      link="left_upper_wing" />
+    <child
+      link="le_ghost_one" />
+    <axis
+      xyz="0 0 -1" />
+    <dynamics
+      damping="0.0005" />
+  </joint>
+
+  <joint
+    name="lep_ghost"
+    type="continuous">
+    <origin
+      xyz="0 0 0.005"
+      rpy="0 0 0" />
+    <parent
+      link="le_ghost_one" />
+    <child
+      link="le_ghost_two" />
+    <axis
+      xyz="-1 0 0" />
+    <dynamics
+      damping="0.0005" />
+  </joint>
+
+  <joint
+    name="ley"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="le_ghost_two" />
+    <child
+      link="left_mid_wing" />
+    <axis
+      xyz="0 -1 0" />
+    <dynamics
+      damping="0.0005" />
+  </joint>
+
+  <joint
+    name="lwr"
+    type="continuous">
+    <origin
+      xyz="-0.0929625657844593 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="left_mid_wing" />
+    <child
+      link="left_hand_wing" />
+    <axis
+      xyz="0 0 -1" />
+    <dynamics
+      damping="0.0005" />
+  </joint>
+
+  <joint
+    name="rsr_ghost"
+    type="continuous">
+    <origin
+      xyz="-0.020961900175268 0.117255823661434 -0.0724066467540735"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="torso" />
+    <child
+      link="rs_ghost_one" />
+    <axis
+      xyz="0 0 -1" />
+    <dynamics
+      damping="0.0005" />
+  </joint>
+
+  <joint
+    name="rsp_ghost"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.005"
+      rpy="0 0 0" />
+    <parent
+      link="rs_ghost_one" />
+    <child
+      link="rs_ghost_two" />
+    <axis
+      xyz="-1 0 0" />
+    <dynamics
+      damping="0.0005" />
+  </joint>
+
+  <joint
+    name="rsy"
+    type="continuous">
+    <origin
+      xyz="0 -0.00425640192706056 0"
+      rpy="0 0 3.14159265358979" />
+    <parent
+      link="rs_ghost_two" />
+    <child
+      link="right_upper_wing" />
+    <axis
+      xyz="0 1 0" />
+    <dynamics
+      damping="0.0005" />
+  </joint>
+
+  <joint
+    name="rer_ghost"
+    type="continuous">
+    <origin
+      xyz="-0.0419980875771034 -0.00425640192706056 0.0100543231592249"
+      rpy="0 0 3.14159265358979" />
+    <parent
+      link="right_upper_wing" />
+    <child
+      link="re_ghost_one" />
+    <axis
+      xyz="0 0 -1" />
+    <dynamics
+      damping="0.0005" />
+  </joint>
+
+  <joint
+    name="rep_ghost"
+    type="continuous">
+    <origin
+      xyz="0 0 0.005"
+      rpy="0 0 0" />
+    <parent
+      link="re_ghost_one" />
+    <child
+      link="re_ghost_two" />
+    <axis
+      xyz="-1 0 0" />
+    <dynamics
+      damping="0.0005" />
+  </joint>
+
+  <joint
+    name="rey"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 -3.14159265358979" />
+    <parent
+      link="re_ghost_two" />
+    <child
+      link="right_mid_wing" />
+    <axis
+      xyz="0 1 0" />
+    <dynamics
+      damping="0.0005" />
+  </joint>
+
   <joint
     name="rwr"
     type="continuous">
@@ -468,5 +582,8 @@
       link="right_hand_wing" />
     <axis
       xyz="0 0 -1" />
+    <dynamics
+      damping="0.0005" />
   </joint>
+
 </robot>
