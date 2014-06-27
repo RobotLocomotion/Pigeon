@@ -1,0 +1,88 @@
+Steps for exporting URDF from Solidworks
+
+1) Create model and make sure all mates in Solidworks are configured as you wish the robot to move
+2) Export the URDF
+    - File > Export to URDF
+    - Click start at the base_link and begin to build up the URDF tree, making sure to name links and joints as you go
+    - N.B. If there is already URDF data in the file, delete it from the Solidworks FeatureManager Design Tree (it will be all the items at the bottom of the list)
+           even though the program claims to be able to use a preconfigured file to update it, I've found this feature doesn't work very well, and it's easier to
+           just start from scratch each time
+    - When you are constructing the ball and socket joints, use the FeatureManager Design Tree to make sure you are selecting the right ghost joints
+      For some reason, they appear to be laid out in this configuration (note the strange numbering of the ghost components): 
+
+
+
+
+┌───────────┬────────────────────┬────────────────┬───────────────┬────────────┬───────────┬───────────────┬─────────────┬──────────┬──────────────┬─────────────┬────────────┬─────────────┬────────────┬───────────────┬──────────────────────┐
+│           │                    │                │               │            │           │               │             │          │              │             │            │             │            │               │                      │
+│Solidworks │         hand       │        mid     │    ghost      │ ghost      │  upper    │    ghost      │  ghost      │ torso    │    ghost     │  ghost      │  upper     │   ghost     │  ghost     │  mid          │     hand             │
+│Names:     │         wing       │        wing    │    component  │ component  │  wing     │    component  │  component  │ <1>      │    component │  component  │  wing      │   component │  component │  wing         │     wing             │
+│           │         <1>        │        <1>     │    <3>        │ <1>        │  <1>      │    <6>        │  <2>        │          │    <4>       │  <5>        │  <3>       │   <7>       │  <8>       │  <3>          │     <3>              │
+│           │                    │                │               │            │           │               │             ├──────────┤              │             │            │             │            │               │                      │
+│           │                    │                │               │            │           │               │             │ tail     │              │             │            │             │            │               │                      │
+│           │                    │                │               │            │           │               │             │ <1>      │              │             │            │             │            │               │                      │
+│           │                    │                │               │            │           │               │             │          │              │             │            │             │            │               │                      │
+├───────────┼────────────────────┼────────────────┼───────────────┼────────────┼───────────┼───────────────┼─────────────┼──────────┼──────────────┼─────────────┼────────────┼─────────────┼────────────┼───────────────┼──────────────────────┤
+│           │                    │                │               │            │           │               │             │          │              │             │            │             │            │               │                      │
+│URDF       │         left_      │        left_   │    left_      │ left_      │  left_    │    left_      │  left_      │ torso    │    right_    │  right_     │  right_    │   right_    │  right_    │   right_      │     right_           │
+│Link       │         hand_      │        mid_    │    elbow_     │ elbow_     │  upper_   │    shoulder_  │  shoulder_  │          │    shoulder_ │  shoulder_  │  upper_    │   elbow_    │  elbow_    │   mid_        │     hand_            │
+│Names:     │         wing       │        wing    │    pitch_     │ roll_      │  wing     │    pitch_     │  roll_      │          │    roll_     │  pitch_     │  wing      │   roll_     │  pitch_    │   wing        │     wing             │
+│           │                    │                │   ghost       │ ghost      │           │    ghost      │  ghost      ├──────────┤    ghost     │  ghost      │            │   ghost     │  ghost     │               │                      │
+│           │                    │                │               │            │           │               │             │          │              │             │            │             │            │               │                      │
+│           │                    │                │               │            │           │               │             │  tail    │              │             │            │             │            │               │                      │
+│           │                    │                │               │            │           │               │             │          │              │             │            │             │            │               │                      │
+├───────────┴────────────────────┴────────────────┴───────────────┴────────────┴───────────┴───────────────┴─────────────┴──────────┴──────────────┴─────────────┴────────────┴─────────────┴────────────┴───────────────┴──────────────────────┤
+│                                                                                                                            __                                                                                                                 │
+│                 _____________           ____                                     ____                                     /XX\                                     ____                                     ____           _____________      │
+│                /XXXXXXXXXXXXX\    |    /XXXX\          _             _     |    /XXXX\          _             _     |    /XXXX\    |     _             _          /XXXX\    |     _             _          /XXXX\    |    /XXXXXXXXXXXXX\     │
+│               /XXXXXXXXXXXXXX|    |    |XXXX|    *    |_|    ---    |_|    |    |XXXX|    *    |_|    ---    |_|    |    |XXXX|    |    |_|    ---    |_|    *    |XXXX|    |    |_|    ---    |_|    *    |XXXX|    |    |XXXXXXXXXXXXXX\    │
+│              /XXXXXXXXXXXXXXX|    |    |XXXX|                              |    |XXXX|                              |    |XXXX|    |                              |XXXX|    |                              |XXXX|    |    |XXXXXXXXXXXXXXX\   │
+│             /XXXXXXXXXXXXXXXX|         |XXXX|                                   |XXXX|                                   |XXXX|                                   |XXXX|                                   |XXXX|         |XXXXXXXXXXXXXXXX\  │
+│             ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯          ¯¯¯¯¯¯                                   ¯¯¯¯¯¯                                   |XXXX|                                   ¯¯¯¯¯¯                                   ¯¯¯¯¯¯         ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯  │
+│                                                                                                                          |XXXX|                                                                                                               │
+│                                                                                                                          |XXXX|                                                                                                               │
+│                                                                                                                          \XXXX/                                                                                                               │
+│                                                                                                                           \XX/                                                                                                                │
+│                                                                                                                            ¯¯                                                                                                                 │
+│                                                                                                                         --------                                                                                                              │                                                              
+│                                                                                                                            __                                                                                                                 │
+│                                                                                                                           /XX\                                                                                                                │
+│                                                                                                                         /XXXXXX\                                                                                                              │
+│                                                                                                                       /XXXXXXXXXX\                                                                                                            │
+│                                                                                                                      |XXXXXXXXXXXX|                                                                                                           │
+│                                                                                                                       \XXXXXXXXXX/                                                                                                            │
+│                                                                                                                        ¯¯¯¯¯¯¯¯¯¯                                                                                                             │
+├───────────┬─────────────────┬─────────────┬─────────────┬────────────┬────────────┬──────────────┬────────────┬──────────┬──────┬───────────┬────────────┬────────────┬────────────┬────────────┬──────────────┬─────────────┬────────────────┤
+│           │                 │             │             │            │            │              │            │          │      │           │            │            │            │            │              │             │                │
+│URDF       │                 │   left_     │    left_    │   left_    │   left_    │   left_      │  left_     │ left_    │      │right_     │ right_     │ right_     │   rihgt_   │   right_   │   right_     │   right_    │                │
+│Joint      │                 │   wrist_    │    elbow_   │   elbow_   │   elbow_   │   shoulder_  │  shoulder_ │ shoulder_│      │shoulder_  │ shoulder_  │ shoulder_  │   elbow_   │   elbow_   │   elbow_     │   wrist_    │                │
+│Names:     │                 │   roll      │    yaw      │   pitch    │   roll     │   yaw        │  pitch     │ roll     │      │roll       │ pitch      │ yaw        │   roll     │   pitch    │   yaw        │   roll      │                │
+│           │                 │             │             │            │            │              │            │          │      │           │            │            │            │            │              │             │                │
+│           │                 │             │             │            │            │              │            │          │tail_ │           │            │            │            │            │              │             │                │
+│           │                 │             │             │            │            │              │            │          │joint │           │            │            │            │            │              │             │                │
+│           │                 │             │             │            │            │              │            │          │      │           │            │            │            │            │              │             │                │
+└───────────┴─────────────────┴─────────────┴─────────────┴────────────┴────────────┴──────────────┴────────────┴──────────┴──────┴───────────┴────────────┴────────────┴────────────┴────────────┴──────────────┴─────────────┴────────────────┘
+
+3) Open the URDF
+4) Remove all <collision> </collision> blocks
+5) Find and replace all instances of "package://whatever_the_urdf_is_named" with ".."
+6) Simplify all "ghost" links to the form:
+
+        <link
+          name="whatever_the_name_is_ghost">
+         <inertial>
+            <mass
+             value="0" />
+         </inertial>
+        </link>
+
+7) Go to the "meshes" folder within the URDF directory, copy the "convert_dae_2_wrl_obj_stl_chullobj.sh" file into this folder from one of the previous pigeon models
+   While in this folder, delete all the ghost .stl files
+   Run the converter script file you just copied from the terminal. Now there should be both stl and obj files in the folder
+8) add damping to the joints as well as any springs, etc.
+
+
+
+
+
+

@@ -345,7 +345,7 @@
     <axis
       xyz="-1 0 0" />
     <dynamics
-      damping="0.0005" />
+      damping="0.0007" />
   </joint>
 
   <joint
@@ -361,7 +361,7 @@
     <axis
       xyz="0 0 -1" />
     <dynamics
-      damping="0.0005" />
+      damping="0.001" />
   </joint>
 
   <joint
@@ -377,7 +377,7 @@
     <axis
       xyz="-1 0 0" />
     <dynamics
-      damping="0.0005" />
+      damping="0.001" />
   </joint>
 
   <joint
@@ -393,7 +393,7 @@
     <axis
       xyz="0 -1 0" />
     <dynamics
-      damping="0.0005" />
+      damping="0.001" />
   </joint>
 
   <joint
@@ -409,7 +409,7 @@
     <axis
       xyz="0 0 -1" />
     <dynamics
-      damping="0.0005" />
+      damping="0.001" />
   </joint>
 
   <joint
@@ -425,7 +425,7 @@
     <axis
       xyz="-1 0 0" />
     <dynamics
-      damping="0.0005" />
+      damping="0.001" />
   </joint>
 
   <joint
@@ -441,7 +441,7 @@
     <axis
       xyz="0 -1 0" />
     <dynamics
-      damping="0.0005" />
+      damping="0.001" />
   </joint>
 
   <joint
@@ -457,7 +457,7 @@
     <axis
       xyz="0 0 -1" />
     <dynamics
-      damping="0.0005" />
+      damping="0.0007" />
   </joint>
 
   <joint
@@ -473,7 +473,7 @@
     <axis
       xyz="0 0 -1" />
     <dynamics
-      damping="0.0005" />
+      damping="0.001" />
   </joint>
 
   <joint
@@ -489,7 +489,7 @@
     <axis
       xyz="-1 0 0" />
     <dynamics
-      damping="0.0005" />
+      damping="0.001" />
   </joint>
 
   <joint
@@ -505,7 +505,7 @@
     <axis
       xyz="0 1 0" />
     <dynamics
-      damping="0.0005" />
+      damping="0.001" />
   </joint>
 
   <joint
@@ -521,7 +521,7 @@
     <axis
       xyz="0 0 -1" />
     <dynamics
-      damping="0.0005" />
+      damping="0.001" />
   </joint>
 
   <joint
@@ -537,7 +537,7 @@
     <axis
       xyz="-1 0 0" />
     <dynamics
-      damping="0.0005" />
+      damping="0.001" />
   </joint>
 
   <joint
@@ -553,7 +553,7 @@
     <axis
       xyz="0 1 0" />
     <dynamics
-      damping="0.0005" />
+      damping="0.001" />
   </joint>
 
   <joint
@@ -569,7 +569,7 @@
     <axis
       xyz="0 0 -1" />
     <dynamics
-      damping="0.0005" />
+      damping="0.0007" />
   </joint>
 
   <force_element name="tail_force"> 
@@ -617,6 +617,95 @@
       <parent link="right_hand_wing"/>
   	<origin xyz="0 0 0" rpy="0 0 0"/> 
     </wing>
+
+  <force_element name="tail_spring">
+    <torsional_spring stiffness="0.005" rest_angle="0">
+      <joint name="tail_joint" />
+    </torsional_spring>
+  </force_element>
+
+  <force_element name="lsr_spring">
+    <torsional_spring stiffness="0.1" rest_angle="0">
+      <joint name="lsr_ghost" />
+    </torsional_spring>
+  </force_element>
+
+  <force_element name="lsp_spring">
+    <torsional_spring stiffness="0.1" rest_angle="0">
+      <joint name="lsp_ghost" />
+    </torsional_spring>
+  </force_element>
+
+  <force_element name="lsy_spring">
+    <torsional_spring stiffness="0.1" rest_angle="0">
+      <joint name="lsy" />
+    </torsional_spring>
+  </force_element>
+
+  <force_element name="ler_spring">
+    <torsional_spring stiffness="0.05" rest_angle="0">
+      <joint name="ler_ghost" />
+    </torsional_spring>
+  </force_element>
+
+  <force_element name="lep_spring">
+    <torsional_spring stiffness="0.05" rest_angle="0">
+      <joint name="lep_ghost" />
+    </torsional_spring>
+  </force_element>
+
+  <force_element name="ley_spring">
+    <torsional_spring stiffness="0.05" rest_angle="0">
+      <joint name="ley" />
+    </torsional_spring>
+  </force_element>
+
+  <force_element name="lwr_spring">
+    <torsional_spring stiffness="0.005" rest_angle="0">
+      <joint name="lwr" />
+    </torsional_spring>
+  </force_element>
+
+  <force_element name="rsr_spring">
+    <torsional_spring stiffness="0.1" rest_angle="0">
+      <joint name="rsr_ghost" />
+    </torsional_spring>
+  </force_element>
+
+  <force_element name="rsp_spring">
+    <torsional_spring stiffness="0.1" rest_angle="0">
+      <joint name="rsp_ghost" />
+    </torsional_spring>
+  </force_element>
+
+  <force_element name="rsy_spring">
+    <torsional_spring stiffness="0.1" rest_angle="0">
+      <joint name="rsy" />
+    </torsional_spring>
+  </force_element>
+
+  <force_element name="rer_spring">
+    <torsional_spring stiffness="0.05" rest_angle="0">
+      <joint name="rer_ghost" />
+    </torsional_spring>
+  </force_element>
+
+  <force_element name="rep_spring">
+    <torsional_spring stiffness="0.05" rest_angle="0">
+      <joint name="rep_ghost" />
+    </torsional_spring>
+  </force_element>
+
+  <force_element name="rey_spring">
+    <torsional_spring stiffness="0.05" rest_angle="0">
+      <joint name="rey" />
+    </torsional_spring>
+  </force_element>
+
+  <force_element name="rwr_spring">
+    <torsional_spring stiffness="0.005" rest_angle="0">
+      <joint name="rwr" />
+    </torsional_spring>
   </force_element>
 
 </robot>
