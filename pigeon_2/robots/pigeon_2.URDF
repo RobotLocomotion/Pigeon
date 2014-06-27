@@ -617,6 +617,7 @@
       <parent link="right_hand_wing"/>
   	<origin xyz="0 0 0" rpy="0 0 0"/> 
     </wing>
+  </force_element>
 
   <force_element name="tail_spring">
     <torsional_spring stiffness="0.005" rest_angle="0">
