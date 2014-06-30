@@ -347,6 +347,11 @@
     <dynamics
       damping="0.0007" />
   </joint>
+  <transmission name="tail_joint_torque" type="SimpleTransmission" >
+    <joint name="tail_joint" />
+    <actuator name="tail_joint_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
 
   <joint
     name="lsr_ghost"
@@ -363,6 +368,11 @@
     <dynamics
       damping="0.001" />
   </joint>
+  <transmission name="lsr_ghost_torque" type="SimpleTransmission" >
+    <joint name="lsr_ghost" />
+    <actuator name="lsr_ghost_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
 
   <joint
     name="lsp_ghost"
@@ -379,6 +389,11 @@
     <dynamics
       damping="0.001" />
   </joint>
+  <transmission name="lsp_ghost_torque" type="SimpleTransmission" >
+    <joint name="lsp_ghost" />
+    <actuator name="lsp_ghost_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
 
   <joint
     name="lsy"
@@ -395,6 +410,11 @@
     <dynamics
       damping="0.001" />
   </joint>
+  <transmission name="lsy_torque" type="SimpleTransmission" >
+    <joint name="lsy" />
+    <actuator name="lsy_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
 
   <joint
     name="ler_ghost"
@@ -411,6 +431,11 @@
     <dynamics
       damping="0.001" />
   </joint>
+  <transmission name="ler_ghost_torque" type="SimpleTransmission" >
+    <joint name="ler_ghost" />
+    <actuator name="ler_ghost_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
 
   <joint
     name="lep_ghost"
@@ -427,6 +452,11 @@
     <dynamics
       damping="0.001" />
   </joint>
+  <transmission name="lep_ghost_torque" type="SimpleTransmission" >
+    <joint name="lep_ghost" />
+    <actuator name="lep_ghost_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
 
   <joint
     name="ley"
@@ -443,6 +473,11 @@
     <dynamics
       damping="0.001" />
   </joint>
+  <transmission name="ley_torque" type="SimpleTransmission" >
+    <joint name="ley" />
+    <actuator name="ley_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
 
   <joint
     name="lwr"
@@ -459,6 +494,11 @@
     <dynamics
       damping="0.0007" />
   </joint>
+  <transmission name="lwr_torque" type="SimpleTransmission" >
+    <joint name="lwr" />
+    <actuator name="lwr_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
 
   <joint
     name="rsr_ghost"
@@ -475,6 +515,11 @@
     <dynamics
       damping="0.001" />
   </joint>
+  <transmission name="rsr_ghost_torque" type="SimpleTransmission" >
+    <joint name="rsr_ghost" />
+    <actuator name="rsr_ghost_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
 
   <joint
     name="rsp_ghost"
@@ -491,6 +536,11 @@
     <dynamics
       damping="0.001" />
   </joint>
+  <transmission name="rsp_ghost_torque" type="SimpleTransmission" >
+    <joint name="rsp_ghost" />
+    <actuator name="rsp_ghost_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
 
   <joint
     name="rsy"
@@ -507,6 +557,11 @@
     <dynamics
       damping="0.001" />
   </joint>
+  <transmission name="rsy_torque" type="SimpleTransmission" >
+    <joint name="rsy" />
+    <actuator name="rsy_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
 
   <joint
     name="rer_ghost"
@@ -523,6 +578,11 @@
     <dynamics
       damping="0.001" />
   </joint>
+  <transmission name="rer_ghost_torque" type="SimpleTransmission" >
+    <joint name="rer_ghost" />
+    <actuator name="rer_ghost_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
 
   <joint
     name="rep_ghost"
@@ -539,6 +599,11 @@
     <dynamics
       damping="0.001" />
   </joint>
+  <transmission name="rep_ghost_torque" type="SimpleTransmission" >
+    <joint name="rep_ghost" />
+    <actuator name="rep_ghost_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
 
   <joint
     name="rey"
@@ -555,6 +620,11 @@
     <dynamics
       damping="0.001" />
   </joint>
+  <transmission name="rey_torque" type="SimpleTransmission" >
+    <joint name="rey" />
+    <actuator name="rey_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
 
   <joint
     name="rwr"
@@ -571,49 +641,54 @@
     <dynamics
       damping="0.0007" />
   </joint>
+  <transmission name="rwr_torque" type="SimpleTransmission" >
+    <joint name="rwr" />
+    <actuator name="rwr_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
 
   <force_element name="tail_force"> 
-    <wing chord=".12567" nominal_speed="7" profile="flat plate" span=".23569" stall_angle="181">
+    <wing chord=".12567" nominal_speed="1" profile="flat plate" span=".23569" stall_angle="181">
       <parent link="tail"/>
   	<origin xyz="0 0 0" rpy="0 0 0"/> 
     </wing>
   </force_element>
 <!--
   <force_element name="left_upper_wing_force"> 
-    <wing chord=".08481" nominal_speed="7" profile="flat plate" span=".042" stall_angle="181">
+    <wing chord=".08481" nominal_speed="1" profile="flat plate" span=".042" stall_angle="181">
       <parent link="left_upper_wing"/>
   	<origin xyz="0 0 0" rpy="0 0 0"/> 
     </wing>
   </force_element>
 -->
   <force_element name="left_mid_wing_force"> 
-    <wing chord=".13935" nominal_speed="7" profile="flat plate" span=".09296" stall_angle="181">
+    <wing chord=".13935" nominal_speed="1" profile="flat plate" span=".09296" stall_angle="181">
       <parent link="left_mid_wing"/>
   	<origin xyz="0 0 0" rpy="0 0 0"/> 
     </wing>
   </force_element>
   <force_element name="left_hand_wing_force"> 
-    <wing chord=".11067" nominal_speed="7" profile="flat plate" span=".14572" stall_angle="181">
+    <wing chord=".11067" nominal_speed="1" profile="flat plate" span=".14572" stall_angle="181">
       <parent link="left_hand_wing"/>
   	<origin xyz="0 0 0" rpy="0 0 0"/> 
     </wing>
   </force_element>
 <!--
   <force_element name="right_upper_wing_force"> 
-    <wing chord=".08481" nominal_speed="7" profile="flat plate" span=".042" stall_angle="181">
+    <wing chord=".08481" nominal_speed="1" profile="flat plate" span=".042" stall_angle="181">
       <parent link="right_upper_wing"/>
   	<origin xyz="0 0 0" rpy="0 0 0"/> 
     </wing>
   </force_element>
 -->
   <force_element name="right_mid_wing_force"> 
-    <wing chord=".13935" nominal_speed="7" profile="flat plate" span=".09296" stall_angle="181">
+    <wing chord=".13935" nominal_speed="1" profile="flat plate" span=".09296" stall_angle="181">
       <parent link="right_mid_wing"/>
   	<origin xyz="0 0 0" rpy="0 0 0"/> 
     </wing>
   </force_element>
   <force_element name="right_hand_wing_force"> 
-    <wing chord=".11067" nominal_speed="7" profile="flat plate" span=".14572" stall_angle="181">
+    <wing chord=".11067" nominal_speed="1" profile="flat plate" span=".14572" stall_angle="181">
       <parent link="right_hand_wing"/>
   	<origin xyz="0 0 0" rpy="0 0 0"/> 
     </wing>
