@@ -5,3 +5,4 @@ drake_viewer.out
 *.ppms.gz
 *.autosave
 *.launch
+*.tmp

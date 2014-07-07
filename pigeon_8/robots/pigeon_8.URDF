@@ -1,0 +1,716 @@
+<?xml version="1.0"?>
+
+<robot
+  name="pigeon_8">
+  <link
+    name="torso">
+    <inertial>
+      <origin
+        xyz="-0.132434070149677 -0.0071275062500549 2.92945296786129E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.266575552840038" />
+      <inertia
+        ixx="0.00016350796386525"
+        ixy="1.49468441773123E-05"
+        ixz="1.32757604675555E-08"
+        iyy="0.0008571776199688"
+        iyz="8.62174508642145E-09"
+        izz="0.000802843103287114" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/torso.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+  </link>
+  <link
+    name="tail">
+    <inertial>
+      <origin
+        xyz="-1.49386379874309E-15 3.52607914646941E-18 -0.0652517307094302"
+        rpy="0 0 0" />
+      <mass
+        value="0.00283414865838335" />
+      <inertia
+        ixx="2.346394244564E-06"
+        ixy="1.6796936313655E-23"
+        ixz="-2.4459164318114E-20"
+        iyy="1.14735911790603E-05"
+        iyz="6.45749316579695E-24"
+        izz="9.13466619052063E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/tail.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="tail_joint"
+    type="continuous">
+    <origin
+      xyz="-0.22998 0 0"
+      rpy="-1.5708 -6.123E-17 -1.5708" />
+    <parent
+      link="torso" />
+    <child
+      link="tail" />
+    <axis
+      xyz="-1 0 0" />
+    <dynamics
+      damping="0.0007" />
+  </joint>
+  <link
+    name="left_shoulder_roll_ghost">
+    <inertial>
+       <mass
+        value="0" />
+    </inertial>
+  </link>
+  <joint
+    name="left_shoulder_roll"
+    type="continuous">
+    <origin
+      xyz="-0.07698 0.042 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="torso" />
+    <child
+      link="left_shoulder_roll_ghost" />
+    <axis
+      xyz="1 0 0" />
+    <dynamics
+      damping="0.001" />
+  </joint>
+  <link
+    name="left_shoulder_pitch_ghost">
+    <inertial>
+       <mass
+        value="0" />
+    </inertial>
+  </link>
+  <joint
+    name="left_shoulder_pitch"
+    type="continuous">
+    <origin
+      xyz="-0.005 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="left_shoulder_roll_ghost" />
+    <child
+      link="left_shoulder_pitch_ghost" />
+    <axis
+      xyz="0 0 1" />
+    <dynamics
+      damping="0.001" />
+  </joint>
+  <link
+    name="left_upper_wing">
+    <inertial>
+      <origin
+        xyz="-0.0218027728742863 1.26519792767838E-08 -0.0543039239207447"
+        rpy="0 0 0" />
+      <mass
+        value="0.00478467934314603" />
+      <inertia
+        ixx="3.47747506697266E-06"
+        ixy="1.43326598475424E-12"
+        ixz="4.41899816252952E-07"
+        iyy="4.1509026030839E-06"
+        iyz="-3.28097162574946E-12"
+        izz="6.85803263309497E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left_upper_wing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="left_shoulder_yaw"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="3.141592653 -1.5708 0" />
+    <parent
+      link="left_shoulder_pitch_ghost" />
+    <child
+      link="left_upper_wing" />
+    <axis
+      xyz="0 1 0" />
+    <dynamics
+      damping="0.001" />
+  </joint>
+  <link
+    name="left_elbow_roll_ghost">
+    <inertial>
+       <mass
+        value="0" />
+    </inertial>
+  </link>
+  <joint
+    name="left_elbow_roll"
+    type="continuous">
+    <origin
+      xyz="-0.041998 0 -0.010054"
+      rpy="3.141592653 -1.5708 0" />
+    <parent
+      link="left_upper_wing" />
+    <child
+      link="left_elbow_roll_ghost" />
+    <axis
+      xyz="1 0 0" />
+    <dynamics
+      damping="0.001" />
+  </joint>
+  <link
+    name="left_elbow_pitch_ghost">
+    <inertial>
+       <mass
+        value="0" />
+    </inertial>
+  </link>
+  <joint
+    name="left_elbow_pitch"
+    type="continuous">
+    <origin
+      xyz="-0.005 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="left_elbow_roll_ghost" />
+    <child
+      link="left_elbow_pitch_ghost" />
+    <axis
+      xyz="0 0 1" />
+    <dynamics
+      damping="0.001" />
+  </joint>
+  <link
+    name="left_mid_wing">
+    <inertial>
+      <origin
+        xyz="-0.0461463515315644 -7.03928812610859E-08 -0.0495486671552645"
+        rpy="0 0 0" />
+      <mass
+        value="0.0092322213928293" />
+      <inertia
+        ixx="1.13159761781576E-05"
+        ixy="2.18214270640706E-11"
+        ixz="-1.65204671390385E-06"
+        iyy="1.76124962714535E-05"
+        iyz="1.10157921385632E-12"
+        izz="6.32076926607804E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left_mid_wing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="left_elbow_yaw"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="3.141592653 -1.5708 0" />
+    <parent
+      link="left_elbow_pitch_ghost" />
+    <child
+      link="left_mid_wing" />
+    <axis
+      xyz="0 1 0" />
+    <dynamics
+      damping="0.001" />
+  </joint>
+  <link
+    name="left_hand_wing">
+    <inertial>
+      <origin
+        xyz="-0.0597835058137273 -3.75375056547601E-08 -0.0458134569307155"
+        rpy="0 0 0" />
+      <mass
+        value="0.00605546079567201" />
+      <inertia
+        ixx="4.30150583723145E-06"
+        ixy="7.40776319597981E-12"
+        ixz="1.56448026115006E-06"
+        iyy="1.33027567122271E-05"
+        iyz="4.65471379102572E-13"
+        izz="9.01715501968073E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left_hand_wing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="left_wrist_roll"
+    type="continuous">
+    <origin
+      xyz="-0.092963 0 0"
+      rpy="0 0 1.1102E-14" />
+    <parent
+      link="left_mid_wing" />
+    <child
+      link="left_hand_wing" />
+    <axis
+      xyz="0 0 -1" />
+    <dynamics
+      damping="0.0007" />
+  </joint>
+  <link
+    name="right_shoulder_roll_ghost">
+    <inertial>
+       <mass
+        value="0" />
+    </inertial>
+  </link>
+  <joint
+    name="right_shoulder_roll"
+    type="continuous">
+    <origin
+      xyz="-0.07698 -0.042 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="torso" />
+    <child
+      link="right_shoulder_roll_ghost" />
+    <axis
+      xyz="1 0 0" />
+    <dynamics
+      damping="0.001" />
+  </joint>
+  <link
+    name="right_shoulder_pitch_ghost">
+    <inertial>
+       <mass
+        value="0" />
+    </inertial>
+  </link>
+  <joint
+    name="right_shoulder_pitch"
+    type="continuous">
+    <origin
+      xyz="-0.005 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_shoulder_roll_ghost" />
+    <child
+      link="right_shoulder_pitch_ghost" />
+    <axis
+      xyz="0 0 1" />
+    <dynamics
+      damping="0.001" />
+  </joint>
+  <link
+    name="right_upper_wing">
+    <inertial>
+      <origin
+        xyz="-0.0218027728742859 -1.26519778391618E-08 0.054303923920745"
+        rpy="0 0 0" />
+      <mass
+        value="0.00478467934314603" />
+      <inertia
+        ixx="3.47747506697267E-06"
+        ixy="-1.43326598616921E-12"
+        ixz="-4.41899816252935E-07"
+        iyy="4.1509026030839E-06"
+        iyz="-3.28097162493219E-12"
+        izz="6.85803263309492E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right_upper_wing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="right_shoulder_yaw"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="3.1416 1.5708 0" />
+    <parent
+      link="right_shoulder_pitch_ghost" />
+    <child
+      link="right_upper_wing" />
+    <axis
+      xyz="0 -1 0" />
+    <dynamics
+      damping="0.001" />
+  </joint>
+  <link
+    name="right_elbow_roll_ghost">
+    <inertial>
+       <mass
+        value="0" />
+    </inertial>
+  </link>
+  <joint
+    name="right_elbow_roll"
+    type="continuous">
+    <origin
+      xyz="-0.041998 0 0.010054"
+      rpy="3.1416 1.5708 0" />
+    <parent
+      link="right_upper_wing" />
+    <child
+      link="right_elbow_roll_ghost" />
+    <axis
+      xyz="1 0 0" />
+    <dynamics
+      damping="0.001" />
+  </joint>
+  <link
+    name="right_elbow_pitch_ghost">
+    <inertial>
+       <mass
+        value="0" />
+    </inertial>
+  </link>
+  <joint
+    name="right_elbow_pitch"
+    type="continuous">
+    <origin
+      xyz="-0.005 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_elbow_roll_ghost" />
+    <child
+      link="right_elbow_pitch_ghost" />
+    <axis
+      xyz="0 0 1" />
+    <dynamics
+      damping="0.001" />
+  </joint>
+  <link
+    name="right_mid_wing">
+    <inertial>
+      <origin
+        xyz="-0.0461463515315641 7.03928826609004E-08 0.0495486671552651"
+        rpy="0 0 0" />
+      <mass
+        value="0.00923222139282932" />
+      <inertia
+        ixx="1.13159761781578E-05"
+        ixy="-2.18214271611959E-11"
+        ixz="1.65204671390384E-06"
+        iyy="1.76124962714538E-05"
+        iyz="1.10157918836807E-12"
+        izz="6.32076926607808E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right_mid_wing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="right_elbow_yaw"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="3.1416 1.5708 0" />
+    <parent
+      link="right_elbow_pitch_ghost" />
+    <child
+      link="right_mid_wing" />
+    <axis
+      xyz="0 -1 0" />
+    <dynamics
+      damping="0.001" />
+  </joint>
+  <link
+    name="right_hand_wing">
+    <inertial>
+      <origin
+        xyz="-0.0597835058137267 3.75375049033405E-08 0.0458134569307162"
+        rpy="0 0 0" />
+      <mass
+        value="0.00605546079567203" />
+      <inertia
+        ixx="4.30150583724034E-06"
+        ixy="-7.40776313167421E-12"
+        ixz="-1.56448026114869E-06"
+        iyy="1.33027567122356E-05"
+        iyz="4.65471368502923E-13"
+        izz="9.01715501968038E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right_hand_wing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="right_wrist_roll"
+    type="continuous">
+    <origin
+      xyz="-0.092963 0 0"
+      rpy="0 0 -3.3307E-14" />
+    <parent
+      link="right_mid_wing" />
+    <child
+      link="right_hand_wing" />
+    <axis
+      xyz="0 0 1" />
+    <dynamics
+      damping="0.0007" />
+  </joint>
+
+  <transmission name="tail_joint_torque" type="SimpleTransmission" >
+    <joint name="tail_joint" />
+    <actuator name="tail_joint_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="left_shoulder_roll_torque" type="SimpleTransmission" >
+    <joint name="left_shoulder_roll" />
+    <actuator name="left_shoulder_roll_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="left_shoulder_pitch_torque" type="SimpleTransmission" >
+    <joint name="left_shoulder_pitch" />
+    <actuator name="left_shoulder_pitch_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="left_shoulder_yaw_torque" type="SimpleTransmission" >
+    <joint name="left_shoulder_yaw" />
+    <actuator name="left_shoulder_yaw_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="left_elbow_roll_torque" type="SimpleTransmission" >
+    <joint name="left_elbow_roll" />
+    <actuator name="left_elbow_roll_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="left_elbow_pitch_torque" type="SimpleTransmission" >
+    <joint name="left_elbow_pitch" />
+    <actuator name="left_elbow_pitch_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="left_elbow_yaw_torque" type="SimpleTransmission" >
+    <joint name="left_elbow_yaw" />
+    <actuator name="left_elbow_yaw_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="left_wrist_roll_torque" type="SimpleTransmission" >
+    <joint name="left_wrist_roll" />
+    <actuator name="left_wrist_roll_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="right_shoulder_roll_torque" type="SimpleTransmission" >
+    <joint name="right_shoulder_roll" />
+    <actuator name="right_shoulder_roll_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="right_shoulder_pitch_torque" type="SimpleTransmission" >
+    <joint name="right_shoulder_pitch" />
+    <actuator name="right_shoulder_pitch_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="right_shoulder_yaw_torque" type="SimpleTransmission" >
+    <joint name="right_shoulder_yaw" />
+    <actuator name="right_shoulder_yaw_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="right_elbow_roll_torque" type="SimpleTransmission" >
+    <joint name="right_elbow_roll" />
+    <actuator name="right_elbow_roll_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="right_elbow_pitch_torque" type="SimpleTransmission" >
+    <joint name="right_elbow_pitch" />
+    <actuator name="right_elbow_pitch_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="right_elbow_yaw_torque" type="SimpleTransmission" >
+    <joint name="right_elbow_yaw" />
+    <actuator name="right_elbow_yaw_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="right_wrist_roll_torque" type="SimpleTransmission" >
+    <joint name="right_wrist_roll" />
+    <actuator name="right_wrist_roll_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+  <force_element name="tail_force"> 
+    <wing chord=".12567" nominal_speed="1" profile="flat plate" span=".23569" stall_angle="181">
+      <parent link="tail"/>
+  	<origin xyz="0 0 0" rpy="0 0 0"/> 
+    </wing>
+  </force_element>
+  <force_element name="left_mid_wing_force"> 
+    <wing chord=".13935" nominal_speed="1" profile="flat plate" span=".09296" stall_angle="181">
+      <parent link="left_mid_wing"/>
+  	<origin xyz="0 0 0" rpy="0 0 0"/> 
+    </wing>
+  </force_element>
+  <force_element name="left_hand_wing_force"> 
+    <wing chord=".11067" nominal_speed="1" profile="flat plate" span=".14572" stall_angle="181">
+      <parent link="left_hand_wing"/>
+  	<origin xyz="0 0 0" rpy="0 0 0"/> 
+    </wing>
+  </force_element>
+  <force_element name="right_mid_wing_force"> 
+    <wing chord=".13935" nominal_speed="1" profile="flat plate" span=".09296" stall_angle="181">
+      <parent link="right_mid_wing"/>
+  	<origin xyz="0 0 0" rpy="0 0 0"/> 
+    </wing>
+  </force_element>
+  <force_element name="right_hand_wing_force"> 
+    <wing chord=".11067" nominal_speed="1" profile="flat plate" span=".14572" stall_angle="181">
+      <parent link="right_hand_wing"/>
+  	<origin xyz="0 0 0" rpy="0 0 0"/> 
+    </wing>
+  </force_element>
+  <force_element name="tail_spring">
+    <torsional_spring stiffness="0.005" rest_angle="0">
+      <joint name="tail_joint" />
+    </torsional_spring>
+  </force_element>
+  <force_element name="left_shoulder_roll_spring">
+    <torsional_spring stiffness="0.1" rest_angle="0">
+      <joint name="left_shoulder_roll" />
+    </torsional_spring>
+  </force_element>
+  <force_element name="left_shoulder_pitch_spring">
+    <torsional_spring stiffness="0.1" rest_angle="0">
+      <joint name="left_shoulder_pitch" />
+    </torsional_spring>
+  </force_element>
+  <force_element name="left_shoulder_yaw_spring">
+    <torsional_spring stiffness="0.1" rest_angle="0">
+      <joint name="left_shoulder_yaw" />
+    </torsional_spring>
+  </force_element>
+  <force_element name="left_elbow_roll_spring">
+    <torsional_spring stiffness="0.05" rest_angle="0">
+      <joint name="left_elbow_roll" />
+    </torsional_spring>
+  </force_element>
+  <force_element name="left_elbow_pitch_spring">
+    <torsional_spring stiffness="0.05" rest_angle="0">
+      <joint name="left_elbow_pitch" />
+    </torsional_spring>
+  </force_element>
+  <force_element name="left_elbow_yaw_spring">
+    <torsional_spring stiffness="0.05" rest_angle="0">
+      <joint name="left_elbow_yaw" />
+    </torsional_spring>
+  </force_element>
+  <force_element name="left_wrist_roll_spring">
+    <torsional_spring stiffness="0.005" rest_angle="0">
+      <joint name="left_wrist_roll" />
+    </torsional_spring>
+  </force_element>
+  <force_element name="right_shoulder_roll_spring">
+    <torsional_spring stiffness="0.1" rest_angle="0">
+      <joint name="right_shoulder_roll" />
+    </torsional_spring>
+  </force_element>
+  <force_element name="right_shoulder_pitch_spring">
+    <torsional_spring stiffness="0.1" rest_angle="0">
+      <joint name="right_shoulder_pitch" />
+    </torsional_spring>
+  </force_element>
+  <force_element name="right_shoulder_yaw_spring">
+    <torsional_spring stiffness="0.1" rest_angle="0">
+      <joint name="right_shoulder_yaw" />
+    </torsional_spring>
+  </force_element>
+  <force_element name="right_elbow_roll_spring">
+    <torsional_spring stiffness="0.05" rest_angle="0">
+      <joint name="right_elbow_roll" />
+    </torsional_spring>
+  </force_element>
+  <force_element name="right_elbow_pitch_spring">
+    <torsional_spring stiffness="0.05" rest_angle="0">
+      <joint name="right_elbow_pitch" />
+    </torsional_spring>
+  </force_element>
+  <force_element name="right_elbow_pitch_spring">
+    <torsional_spring stiffness="0.05" rest_angle="0">
+      <joint name="right_elbow_yaw" />
+    </torsional_spring>
+  </force_element>
+  <force_element name="right_wrist_roll_spring">
+    <torsional_spring stiffness="0.005" rest_angle="0">
+      <joint name="right_wrist_roll" />
+    </torsional_spring>
+  </force_element>
+</robot>
