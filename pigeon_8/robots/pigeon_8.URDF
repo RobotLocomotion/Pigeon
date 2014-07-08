@@ -636,7 +636,7 @@
     <wing chord=".11067" nominal_speed="1" profile="flat plate" span=".14572" stall_angle="181">
       <parent link="right_hand_wing"/>
   	<origin xyz="0 0 0" rpy="0 0 0"/> 
-    </wing>
+    </wing> 
   </force_element>
   <force_element name="tail_spring">
     <torsional_spring stiffness="0.005" rest_angle="0">
