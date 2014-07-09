@@ -1,4 +1,7 @@
-Dimensions (see attached PDF = :
+First off, we'd love to hear if you think the attached model looks overall correct, especially with regards to joint placement, etc.
+    We currently have both the shoulder and elbow implemented as ball and socket joints, with the wrist being a single pin-joint. Does that sound right?
+
+Dimensions (see attached PDF)
   A = 
   B = 
   C = 
@@ -13,6 +16,7 @@ Dimensions (see attached PDF = :
   L = 
   M = 
 
+
 Mass (we got these from the paper you sent us, we just want to make sure everything looks correct):
   Torso+Head  =   266.60  g
   Tail        =   2.83  	g
@@ -20,10 +24,10 @@ Mass (we got these from the paper you sent us, we just want to make sure everyth
   Mid Wing		=   9.23   	g
   Hand Wing		=   6.06   	g
 
-Joint Damping:                  /////// Benoit: do you think this is something we can ask them about? If so, what measurement to we want to ask for?
-  Shoulder  = 
-  Elbow     = 
-  Wrist     = 
-  Tail      =
 
-Aerodynamic Data:               /////// Benoit: what would you like to ask for here?
+We were also wondering about what sorts of data you might have (if any) on the tendons/ligaments.
+    We're trying to figure out what spring/damping coefficients make sense for the joints
+
+
+Also, as I mentioned in my email, some good photographs of the birds (especially a top-view, but side and front if possible) would really help a lot.
+    At present we're mostly relying on pictures we found online to estimate the wing shapes, so we'd rather get a good one from you to work off of.
