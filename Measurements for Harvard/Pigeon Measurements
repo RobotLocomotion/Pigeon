@@ -1,4 +1,4 @@
-First off, we'd love to hear if you think the attached model looks overall correct, especially with regards to joint placement, etc.
+First off, we'd like to hear if you think the attached model looks overall correct, especially with regards to joint placement, etc.
     We currently have both the shoulder and elbow implemented as ball and socket joints, with the wrist being a single pin-joint. Does that sound right?
 
 Dimensions (see attached PDF)
