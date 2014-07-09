@@ -1,7 +1,7 @@
 function xtraj = runFlapping( )
 
-tf = 1.5;
-dt = .001;
+tf = 1;
+dt = .01;
 pts = tf/dt;
 
 options.floating = true;
