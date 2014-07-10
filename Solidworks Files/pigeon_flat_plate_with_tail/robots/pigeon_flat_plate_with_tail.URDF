@@ -1,0 +1,414 @@
+<robot
+  name="pigeon_flat_plate_with_tail">
+  <link
+    name="torso">
+    <inertial>
+      <origin
+        xyz="-0.0629726051612279 -0.0795364123806518 -0.0718210124188262"
+        rpy="0 0 0" />
+      <mass
+        value="0.671119349684871" />
+      <inertia
+        ixx="0.00202085553857623"
+        ixy="-1.51403317046805E-08"
+        ixz="-5.76561128003562E-07"
+        iyy="0.0021573468866358"
+        iyz="-3.77085085679846E-05"
+        izz="0.000411519567288276" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_flat_plate_with_tail/meshes/torso.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_flat_plate_with_tail/meshes/torso.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_upper_wing">
+    <inertial>
+      <origin
+        xyz="-0.0218027728742861 -1.26519787285728E-08 -0.0657043185272298"
+        rpy="0 0 0" />
+      <mass
+        value="0.0145874370217866" />
+      <inertia
+        ixx="1.06020581310142E-05"
+        ixy="-4.36971336785098E-12"
+        ixz="-1.34725553735652E-06"
+        iyy="1.26551908630606E-05"
+        iyz="-1.00029622740535E-11"
+        izz="2.09086360765088E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_flat_plate_with_tail/meshes/left_upper_wing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_flat_plate_with_tail/meshes/left_upper_wing.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_shoulder"
+    type="continuous">
+    <origin
+      xyz="-0.104961900175268 -0.00441963567052359 -0.0724066467540735"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="torso" />
+    <child
+      link="left_upper_wing" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="left_mid_wing">
+    <inertial>
+      <origin
+        xyz="-0.0461463515315644 7.03928810380505E-08 -0.0554052521334852"
+        rpy="0 0 0" />
+      <mass
+        value="0.0435482141171195" />
+      <inertia
+        ixx="5.33772461233865E-05"
+        ixy="-1.02931259417519E-10"
+        ixz="7.79267317879191E-06"
+        iyy="8.30778126011975E-05"
+        iyz="5.19612845078371E-12"
+        izz="2.98149493682927E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_flat_plate_with_tail/meshes/left_mid_wing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_flat_plate_with_tail/meshes/left_mid_wing.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_elbow"
+    type="continuous">
+    <origin
+      xyz="-0.0419980875771034 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="left_upper_wing" />
+    <child
+      link="left_mid_wing" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="left_hand_wing">
+    <inertial>
+      <origin
+        xyz="-0.0597835085302467 3.75240510469554E-08 -0.0528490418671675"
+        rpy="0 0 0" />
+      <mass
+        value="0.0455297796070336" />
+      <inertia
+        ixx="3.23421498648353E-05"
+        ixy="-5.57963541026767E-11"
+        ixz="-1.17630180635962E-05"
+        iyy="0.000100020749222632"
+        iyz="3.58722193283899E-12"
+        izz="6.77981793917098E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_flat_plate_with_tail/meshes/left_hand_wing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_flat_plate_with_tail/meshes/left_hand_wing.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wrist"
+    type="continuous">
+    <origin
+      xyz="-0.0929625657844593 0 -0.00629141806382998"
+      rpy="0 0 0" />
+    <parent
+      link="left_mid_wing" />
+    <child
+      link="left_hand_wing" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="right_upper_wing">
+    <inertial>
+      <origin
+        xyz="-0.0218027728742861 -1.26519787424506E-08 -0.0657043185272298"
+        rpy="0 0 0" />
+      <mass
+        value="0.0145874370217866" />
+      <inertia
+        ixx="1.06020581310142E-05"
+        ixy="-4.36971336818734E-12"
+        ixz="-1.34725553735653E-06"
+        iyy="1.26551908630606E-05"
+        iyz="-1.00029622739721E-11"
+        izz="2.09086360765088E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_flat_plate_with_tail/meshes/right_upper_wing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_flat_plate_with_tail/meshes/right_upper_wing.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_shoulder"
+    type="continuous">
+    <origin
+      xyz="-0.0209619001752679 -0.00441963567052359 -0.0724066467540735"
+      rpy="-1.5707963267949 0 3.14159265358979" />
+    <parent
+      link="torso" />
+    <child
+      link="right_upper_wing" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="right_mid_wing">
+    <inertial>
+      <origin
+        xyz="-0.0461463515315642 7.03928810380505E-08 -0.0554052521334852"
+        rpy="0 0 0" />
+      <mass
+        value="0.0435482141171192" />
+      <inertia
+        ixx="5.33772461233857E-05"
+        ixy="-1.02931259410004E-10"
+        ixz="7.79267317879254E-06"
+        iyy="8.30778126011965E-05"
+        iyz="5.19612845166378E-12"
+        izz="2.98149493682925E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_flat_plate_with_tail/meshes/right_mid_wing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_flat_plate_with_tail/meshes/right_mid_wing.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_elbow"
+    type="continuous">
+    <origin
+      xyz="-0.0419980875771034 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_upper_wing" />
+    <child
+      link="right_mid_wing" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="right_hand_wing">
+    <inertial>
+      <origin
+        xyz="-0.0597835085302467 3.75240510469554E-08 -0.0528490418671675"
+        rpy="0 0 0" />
+      <mass
+        value="0.0455297796070336" />
+      <inertia
+        ixx="3.23421498648519E-05"
+        ixy="-5.5796354093827E-11"
+        ixz="-1.1763018063607E-05"
+        iyy="0.000100020749222648"
+        iyz="3.58722192649059E-12"
+        izz="6.77981793917096E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_flat_plate_with_tail/meshes/right_hand_wing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_flat_plate_with_tail/meshes/right_hand_wing.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wrist"
+    type="continuous">
+    <origin
+      xyz="-0.0929625657844593 0 -0.00629141806382998"
+      rpy="0 0 0" />
+    <parent
+      link="right_mid_wing" />
+    <child
+      link="right_hand_wing" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="tail">
+    <inertial>
+      <origin
+        xyz="-0.062961900175268 0 0.0652517307094301"
+        rpy="0 0 0" />
+      <mass
+        value="0.0785082730854115" />
+      <inertia
+        ixx="6.49970704865375E-05"
+        ixy="-4.9113848870336E-22"
+        ixz="5.8802530802233E-21"
+        iyy="0.000317828010500285"
+        iyz="6.64566326399652E-23"
+        izz="0.00025303784461276" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_flat_plate_with_tail/meshes/tail.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_flat_plate_with_tail/meshes/tail.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tail_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.0257441763385664 -0.0724066467540735"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="torso" />
+    <child
+      link="tail" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+</robot>
