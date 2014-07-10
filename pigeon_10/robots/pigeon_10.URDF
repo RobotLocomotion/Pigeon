@@ -6,7 +6,7 @@
     name="torso">
     <inertial>
       <origin
-        xyz="-0.132434070149677 -2.92945297478124E-07 -0.00712750625005471"
+        xyz="-0.132434070149677 0 -0.00712750625005471"
         rpy="0 0 0" />
       <mass
         value="0.266575552840038" />
@@ -37,7 +37,7 @@
     name="tail">
     <inertial>
       <origin
-        xyz="-0.0367434745368314 1.14634097922214E-17 3.36408472959864E-18"
+        xyz="-0.0367434745368314 0 0"
         rpy="0 0 0" />
       <mass
         value="0.00283414865838335" />
@@ -316,7 +316,7 @@
     name="right_shoulder_roll"
     type="continuous">
     <origin
-      xyz="-0.081979541052234 -0.042 0"
+      xyz="-0.08198 -0.042 0"
       rpy="3.14159265358979 0 0" />
     <parent
       link="torso" />
@@ -489,16 +489,16 @@
     name="right_hand_wing">
     <inertial>
       <origin
-        xyz="-0.0648836782544586 0.0597835058137273 3.75375052734586E-08"
+        xyz="-0.0648836782544586 0.0597835058137272 3.75375052734677E-08"
         rpy="0 0 0" />
       <mass
         value="0.00605546079567201" />
       <inertia
         ixx="9.01715501968103E-06"
         ixy="-1.56448026114718E-06"
-        ixz="-4.65471378829106E-13"
+        ixz="-4.65471378828143E-13"
         iyy="4.30150583723173E-06"
-        iyz="7.40776319335155E-12"
+        iyz="7.40776319335357E-12"
         izz="1.33027567122276E-05" />
     </inertial>
     <visual>
@@ -632,7 +632,7 @@
   	<origin xyz="0 0 0" rpy="0 0 0"/> 
     </wing>
   </force_element>
-  <force_element name="right_hand_wing_force"> 
+  <force_element name="right_hand_wing_force">
     <wing chord=".11067" nominal_speed="1" profile="flat plate" span=".14572" stall_angle="181">
       <parent link="right_hand_wing"/>
   	<origin xyz="0 0 0" rpy="0 0 0"/> 
