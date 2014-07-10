@@ -7,7 +7,7 @@ Steps for exporting URDF from Solidworks
     - N.B. If there is already URDF data in the file, delete it from the Solidworks FeatureManager Design Tree (it will be all the items at the bottom of the list)
            even though the program claims to be able to use a preconfigured file to update it, I've found this feature doesn't work very well, and it's easier to
            just start from scratch each time
-    - N.B. If you have trouble with joints not forming in the correct locations, manually set the axes when building up the URDF tree
+    - N.B. If you have trouble with joints not forming in the correct locations, manually set the axes and coordinate systems when building up the URDF tree
     - When you are constructing the ball and socket joints, use the FeatureManager Design Tree to make sure you are selecting the right ghost joints
       For some reason, they appear to be laid out in this configuration (note the strange numbering of the ghost components): 
 
@@ -81,3 +81,6 @@ Steps for exporting URDF from Solidworks
    While in this folder, delete all the ghost .stl files
    Run the converter script file you just copied from the terminal. Now there should be both stl and obj files in the folder
 8) add damping to the joints as well as any springs, etc.
+
+
+

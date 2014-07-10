@@ -1,22 +1,22 @@
 <?xml version="1.0"?>
 
 <robot
-  name="pigeon_8">
+  name="pigeon_10">
   <link
     name="torso">
     <inertial>
       <origin
-        xyz="-0.132434070149677 -0.0071275062500549 2.92945296786129E-07"
+        xyz="-0.132434070149677 -2.92945297478124E-07 -0.00712750625005471"
         rpy="0 0 0" />
       <mass
         value="0.266575552840038" />
       <inertia
         ixx="0.00016350796386525"
-        ixy="1.49468441773123E-05"
-        ixz="1.32757604675555E-08"
-        iyy="0.0008571776199688"
-        iyz="8.62174508642145E-09"
-        izz="0.000802843103287114" />
+        ixy="-1.32757604650755E-08"
+        ixz="1.49468441773122E-05"
+        iyy="0.000802843103287112"
+        iyz="-8.62174508639036E-09"
+        izz="0.000857177619968798" />
     </inertial>
     <visual>
       <origin
@@ -37,17 +37,17 @@
     name="tail">
     <inertial>
       <origin
-        xyz="-1.49386379874309E-15 3.52607914646941E-18 -0.0652517307094302"
+        xyz="-0.0367434745368314 1.14634097922214E-17 3.36408472959864E-18"
         rpy="0 0 0" />
       <mass
         value="0.00283414865838335" />
       <inertia
-        ixx="2.346394244564E-06"
-        ixy="1.6796936313655E-23"
-        ixz="-2.4459164318114E-20"
-        iyy="1.14735911790603E-05"
-        iyz="6.45749316579695E-24"
-        izz="9.13466619052063E-06" />
+        ixx="9.13466619052064E-06"
+        ixy="3.51036877309245E-22"
+        ixz="-1.61534958146993E-23"
+        iyy="2.346394244564E-06"
+        iyz="1.49306100565822E-23"
+        izz="1.14735911790603E-05" />
     </inertial>
     <visual>
       <origin
@@ -68,14 +68,14 @@
     name="tail_joint"
     type="continuous">
     <origin
-      xyz="-0.22998 0 0"
-      rpy="-1.5708 -6.123E-17 -1.5708" />
+      xyz="-0.25849 0 0"
+      rpy="0 0 0" />
     <parent
       link="torso" />
     <child
       link="tail" />
     <axis
-      xyz="-1 0 0" />
+      xyz="0 1 0" />
     <dynamics
       damping="0.0007" />
   </joint>
@@ -90,14 +90,14 @@
     name="left_shoulder_roll"
     type="continuous">
     <origin
-      xyz="-0.07698 0.042 0"
-      rpy="1.5708 0 0" />
+      xyz="-0.08198 0.042 0"
+      rpy="0 0 0" />
     <parent
       link="torso" />
     <child
       link="left_shoulder_roll_ghost" />
     <axis
-      xyz="1 0 0" />
+      xyz="-1 0 0" />
     <dynamics
       damping="0.001" />
   </joint>
@@ -112,14 +112,14 @@
     name="left_shoulder_pitch"
     type="continuous">
     <origin
-      xyz="-0.005 0 0"
+      xyz="0 0 0"
       rpy="0 0 0" />
     <parent
       link="left_shoulder_roll_ghost" />
     <child
       link="left_shoulder_pitch_ghost" />
     <axis
-      xyz="0 0 1" />
+      xyz="0 1 0" />
     <dynamics
       damping="0.001" />
   </joint>
@@ -127,17 +127,17 @@
     name="left_upper_wing">
     <inertial>
       <origin
-        xyz="-0.0218027728742863 1.26519792767838E-08 -0.0543039239207447"
+        xyz="-0.0543039239207449 0.0218027728742861 -1.26519787320575E-08"
         rpy="0 0 0" />
       <mass
-        value="0.00478467934314603" />
+        value="0.00478467934314604" />
       <inertia
-        ixx="3.47747506697266E-06"
-        ixy="1.43326598475424E-12"
-        ixz="4.41899816252952E-07"
-        iyy="4.1509026030839E-06"
-        iyz="-3.28097162574946E-12"
-        izz="6.85803263309497E-07" />
+        ixx="6.85803263309496E-07"
+        ixy="-4.41899816252943E-07"
+        ixz="3.28097162566753E-12"
+        iyy="3.47747506697267E-06"
+        iyz="1.43326598501674E-12"
+        izz="4.15090260308391E-06" />
     </inertial>
     <visual>
       <origin
@@ -159,13 +159,13 @@
     type="continuous">
     <origin
       xyz="0 0 0"
-      rpy="3.141592653 -1.5708 0" />
+      rpy="0 0 0" />
     <parent
       link="left_shoulder_pitch_ghost" />
     <child
       link="left_upper_wing" />
     <axis
-      xyz="0 1 0" />
+      xyz="0 0 -1" />
     <dynamics
       damping="0.001" />
   </joint>
@@ -180,14 +180,14 @@
     name="left_elbow_roll"
     type="continuous">
     <origin
-      xyz="-0.041998 0 -0.010054"
-      rpy="3.141592653 -1.5708 0" />
+      xyz="-0.0150543231592249 0.0419980875771034 0"
+      rpy="0 0 0" />
     <parent
       link="left_upper_wing" />
     <child
       link="left_elbow_roll_ghost" />
     <axis
-      xyz="1 0 0" />
+      xyz="-1 0 0" />
     <dynamics
       damping="0.001" />
   </joint>
@@ -202,14 +202,14 @@
     name="left_elbow_pitch"
     type="continuous">
     <origin
-      xyz="-0.005 0 0"
+      xyz="0 0 0"
       rpy="0 0 0" />
     <parent
       link="left_elbow_roll_ghost" />
     <child
       link="left_elbow_pitch_ghost" />
     <axis
-      xyz="0 0 1" />
+      xyz="0 1 0" />
     <dynamics
       damping="0.001" />
   </joint>
@@ -217,17 +217,17 @@
     name="left_mid_wing">
     <inertial>
       <origin
-        xyz="-0.0461463515315644 -7.03928812610859E-08 -0.0495486671552645"
+        xyz="-0.0495486671552646 0.0461463515315644 7.03928810441272E-08"
         rpy="0 0 0" />
       <mass
-        value="0.0092322213928293" />
+        value="0.00923222139282933" />
       <inertia
-        ixx="1.13159761781576E-05"
-        ixy="2.18214270640706E-11"
-        ixz="-1.65204671390385E-06"
-        iyy="1.76124962714535E-05"
-        iyz="1.10157921385632E-12"
-        izz="6.32076926607804E-06" />
+        ixx="6.32076926607803E-06"
+        ixy="1.65204671390409E-06"
+        ixz="-1.10157923158038E-12"
+        iyy="1.13159761781573E-05"
+        iyz="2.18214269967381E-11"
+        izz="1.76124962714532E-05" />
     </inertial>
     <visual>
       <origin
@@ -249,13 +249,13 @@
     type="continuous">
     <origin
       xyz="0 0 0"
-      rpy="3.141592653 -1.5708 0" />
+      rpy="0 0 0" />
     <parent
       link="left_elbow_pitch_ghost" />
     <child
       link="left_mid_wing" />
     <axis
-      xyz="0 1 0" />
+      xyz="0 0 -1" />
     <dynamics
       damping="0.001" />
   </joint>
@@ -263,17 +263,17 @@
     name="left_hand_wing">
     <inertial>
       <origin
-        xyz="-0.0597835058137273 -3.75375056547601E-08 -0.0458134569307155"
+        xyz="-0.0648836782544586 0.0597835058137272 3.75375052734677E-08"
         rpy="0 0 0" />
       <mass
         value="0.00605546079567201" />
       <inertia
-        ixx="4.30150583723145E-06"
-        ixy="7.40776319597981E-12"
-        ixz="1.56448026115006E-06"
-        iyy="1.33027567122271E-05"
-        iyz="4.65471379102572E-13"
-        izz="9.01715501968073E-06" />
+        ixx="9.01715501968103E-06"
+        ixy="-1.56448026114718E-06"
+        ixz="-4.65471378828143E-13"
+        iyy="4.30150583723173E-06"
+        iyz="7.40776319335357E-12"
+        izz="1.33027567122276E-05" />
     </inertial>
     <visual>
       <origin
@@ -294,14 +294,14 @@
     name="left_wrist_roll"
     type="continuous">
     <origin
-      xyz="-0.092963 0 0"
-      rpy="0 0 1.1102E-14" />
+      xyz="0.0190702213237429 0.0929625657844593 0"
+      rpy="0 0 0" />
     <parent
       link="left_mid_wing" />
     <child
       link="left_hand_wing" />
     <axis
-      xyz="0 0 1" />
+      xyz="-1 0 0" />
     <dynamics
       damping="0.0007" />
   </joint>
@@ -316,14 +316,14 @@
     name="right_shoulder_roll"
     type="continuous">
     <origin
-      xyz="-0.07698 -0.042 0"
-      rpy="1.5708 0 0" />
+      xyz="-0.081979541052234 -0.042 0"
+      rpy="3.14159265358979 0 0" />
     <parent
       link="torso" />
     <child
       link="right_shoulder_roll_ghost" />
     <axis
-      xyz="1 0 0" />
+      xyz="-1 0 0" />
     <dynamics
       damping="0.001" />
   </joint>
@@ -338,14 +338,14 @@
     name="right_shoulder_pitch"
     type="continuous">
     <origin
-      xyz="-0.005 0 0"
+      xyz="0 0 0"
       rpy="0 0 0" />
     <parent
       link="right_shoulder_roll_ghost" />
     <child
       link="right_shoulder_pitch_ghost" />
     <axis
-      xyz="0 0 1" />
+      xyz="0 1 0" />
     <dynamics
       damping="0.001" />
   </joint>
@@ -353,17 +353,17 @@
     name="right_upper_wing">
     <inertial>
       <origin
-        xyz="-0.0218027728742863 -1.26519792767838E-08 0.0543039239207447"
+        xyz="-0.0543039239207449 0.0218027728742861 -1.26519787320575E-08"
         rpy="0 0 0" />
       <mass
-        value="0.00478467934314603" />
+        value="0.00478467934314604" />
       <inertia
-        ixx="3.47747506697266E-06"
-        ixy="-1.43326598475424E-12"
-        ixz="-4.41899816252952E-07"
-        iyy="4.1509026030839E-06"
-        iyz="-3.28097162574946E-12"
-        izz="6.85803263309497E-07" />
+        ixx="6.85803263309496E-07"
+        ixy="-4.41899816252943E-07"
+        ixz="3.28097162566753E-12"
+        iyy="3.47747506697267E-06"
+        iyz="1.43326598501674E-12"
+        izz="4.15090260308391E-06" />
     </inertial>
     <visual>
       <origin
@@ -385,13 +385,13 @@
     type="continuous">
     <origin
       xyz="0 0 0"
-      rpy="3.141592653 1.5708 0" />
+      rpy="0 0 0" />
     <parent
       link="right_shoulder_pitch_ghost" />
     <child
       link="right_upper_wing" />
     <axis
-      xyz="0 -1 0" />
+      xyz="0 0 -1" />
     <dynamics
       damping="0.001" />
   </joint>
@@ -406,14 +406,14 @@
     name="right_elbow_roll"
     type="continuous">
     <origin
-      xyz="-0.041998 0 0.010054"
-      rpy="3.141592653 1.5708 0" />
+      xyz="-0.0150543231592249 0.0419980875771034 0"
+      rpy="0 0 0" />
     <parent
       link="right_upper_wing" />
     <child
       link="right_elbow_roll_ghost" />
     <axis
-      xyz="1 0 0" />
+      xyz="-1 0 0" />
     <dynamics
       damping="0.001" />
   </joint>
@@ -428,14 +428,14 @@
     name="right_elbow_pitch"
     type="continuous">
     <origin
-      xyz="-0.005 0 0"
+      xyz="0 0 0"
       rpy="0 0 0" />
     <parent
       link="right_elbow_roll_ghost" />
     <child
       link="right_elbow_pitch_ghost" />
     <axis
-      xyz="0 0 1" />
+      xyz="0 1 0" />
     <dynamics
       damping="0.001" />
   </joint>
@@ -443,17 +443,17 @@
     name="right_mid_wing">
     <inertial>
       <origin
-        xyz="-0.0461463515315644 7.03928812610859E-08 0.0495486671552645"
+        xyz="-0.0495486671552646 0.0461463515315644 7.03928810441272E-08"
         rpy="0 0 0" />
       <mass
-        value="0.0092322213928293" />
+        value="0.00923222139282933" />
       <inertia
-        ixx="1.13159761781576E-05"
-        ixy="-2.18214270640706E-11"
-        ixz="1.65204671390385E-06"
-        iyy="1.76124962714535E-05"
-        iyz="1.10157921385632E-12"
-        izz="6.32076926607804E-06" />
+        ixx="6.32076926607803E-06"
+        ixy="1.65204671390409E-06"
+        ixz="-1.10157923158038E-12"
+        iyy="1.13159761781573E-05"
+        iyz="2.18214269967381E-11"
+        izz="1.76124962714532E-05" />
     </inertial>
     <visual>
       <origin
@@ -475,13 +475,13 @@
     type="continuous">
     <origin
       xyz="0 0 0"
-      rpy="3.141592653 1.5708 0" />
+      rpy="0 0 0" />
     <parent
       link="right_elbow_pitch_ghost" />
     <child
       link="right_mid_wing" />
     <axis
-      xyz="0 -1 0" />
+      xyz="0 0 -1" />
     <dynamics
       damping="0.001" />
   </joint>
@@ -489,17 +489,17 @@
     name="right_hand_wing">
     <inertial>
       <origin
-        xyz="-0.0597835058137273 3.75375056547601E-08 0.0458134569307155"
+        xyz="-0.0648836782544586 0.0597835058137273 3.75375052734586E-08"
         rpy="0 0 0" />
       <mass
         value="0.00605546079567201" />
       <inertia
-        ixx="4.30150583723145E-06"
-        ixy="-7.40776319597981E-12"
-        ixz="-1.56448026115006E-06"
-        iyy="1.33027567122271E-05"
-        iyz="4.65471379102572E-13"
-        izz="9.01715501968073E-06" />
+        ixx="9.01715501968103E-06"
+        ixy="-1.56448026114718E-06"
+        ixz="-4.65471378829106E-13"
+        iyy="4.30150583723173E-06"
+        iyz="7.40776319335155E-12"
+        izz="1.33027567122276E-05" />
     </inertial>
     <visual>
       <origin
@@ -520,14 +520,14 @@
     name="right_wrist_roll"
     type="continuous">
     <origin
-      xyz="-0.092963 0 0"
-      rpy="0 0 -1.1102E-14" />
+      xyz="0.0190702213237429 0.0929625657844593 0"
+      rpy="0 0 0" />
     <parent
       link="right_mid_wing" />
     <child
       link="right_hand_wing" />
     <axis
-      xyz="0 0 -1" />
+      xyz="-1 0 0" />
     <dynamics
       damping="0.0007" />
   </joint>
