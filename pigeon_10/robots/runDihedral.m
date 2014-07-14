@@ -1,4 +1,4 @@
-function xtraj = runFlapping( )
+function xtraj = runDihedral( )
 
 tf = 7;
 dt = .007;

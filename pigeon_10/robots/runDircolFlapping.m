@@ -29,6 +29,7 @@ con.xf.ub = xf_ub;
 
 options.method='dircol';
 options.grad_method={'user'};
+options.SuperbasicsLimit = 2000;
 
 tic
 disp('Starting optimization');

@@ -16,7 +16,7 @@ x0.base_pitch = -.2;    % initial pitch
 
 
 u = zeros(15,pts);
-u(1,:) = .3*sin(linspace(0,10*tf,pts));
+u(1,:) = .3*sin(linspace(0,10*tf,pts))+.15;
 u(5,:) = -sin(linspace(0,10*tf,pts));
 u(8,:) = -.7*sin(linspace(0,10*tf,pts));
 u(12,:) = sin(linspace(0,10*tf,pts));

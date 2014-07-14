@@ -1,4 +1,4 @@
-function xtraj = runFlapping( )
+function xtraj = runFlappingCompare( )
 
 tf = 1;
 dt = .007;
