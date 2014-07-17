@@ -1,6 +1,6 @@
 function xtraj = runFlapping( )
 
-tf = 1;
+tf = 1.5;
 dt = .007;
 pts = tf/dt;
 
@@ -16,11 +16,11 @@ x0.base_pitch = -.2;    % initial pitch
 
 
 u = zeros(16,pts);
-u(1,:) = .3*sin(linspace(0,10*tf,pts))+.15;
-u(3,:) = -sin(linspace(0,10*tf,pts));
-u(7,:) = -.7*sin(linspace(0,10*tf,pts));
-u(10,:) = sin(linspace(0,10*tf,pts));
-u(11,:) = .7*sin(linspace(0,10*tf,pts));
+%u(1,:) = -.1*sin(linspace(0,20*tf,pts));
+u(3,:) = -.7*sin(linspace(0,10*tf,pts));
+u(7,:) = -.4*sin(linspace(0,10*tf,pts));
+u(10,:) = .7*sin(linspace(0,10*tf,pts));
+u(14,:) = .4*sin(linspace(0,10*tf,pts));
 utraj = PPTrajectory(foh(linspace(0,tf,pts),u));
 utraj = setOutputFrame(utraj, p.getInputFrame);
 
