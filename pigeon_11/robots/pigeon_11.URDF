@@ -1,0 +1,891 @@
+<robot
+  name="pigeon_11">
+  <link
+    name="torso">
+    <inertial>
+      <origin
+        xyz="-0.112665330319483 -4.6501440803508E-07 -0.0314957372746431"
+        rpy="0 0 0" />
+      <mass
+        value="0.337792399438775" />
+      <inertia
+        ixx="0.000213744392058215"
+        ixy="1.41607132067414E-08"
+        ixz="4.48887348152591E-05"
+        iyy="0.000899256138619334"
+        iyz="-2.26830147050322E-09"
+        izz="0.000883233595019567" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/torso.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/torso.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="tail_pitch_ghost">
+    <inertial>
+      <origin
+        xyz="2.77555756156289E-17 1.47116388048271E-18 0"
+        rpy="0 0 0" />
+      <mass
+        value="6.4E-11" />
+      <inertia
+        ixx="1.70666666666667E-14"
+        ixy="-4.61364164464998E-31"
+        ixz="-9.07332658080703E-31"
+        iyy="1.70666666666666E-14"
+        iyz="7.86733236427898E-31"
+        izz="1.70666666666666E-14" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/tail_pitch_ghost.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/tail_pitch_ghost.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tail_pitch"
+    type="continuous">
+    <origin
+      xyz="-0.21 0.018568 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="torso" />
+    <child
+      link="tail_pitch_ghost" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="tail">
+    <inertial>
+      <origin
+        xyz="-0.0604601258312875 1.12969292526408E-09 -2.22703799845902E-12"
+        rpy="0 0 0" />
+      <mass
+        value="0.00362497095939093" />
+      <inertia
+        ixx="1.00703915504817E-05"
+        ixy="1.02394659970605E-12"
+        ixz="-6.53120251473698E-15"
+        iyy="3.96754057321972E-06"
+        iyz="-1.48239274811841E-12"
+        izz="1.39841601393262E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/tail.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/tail.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tail_yaw"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="tail_pitch_ghost" />
+    <child
+      link="tail" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="left_shoulder_roll_ghost">
+    <inertial>
+      <origin
+        xyz="0 -3.46944695195361E-18 0"
+        rpy="0 0 0" />
+      <mass
+        value="6.4E-11" />
+      <inertia
+        ixx="1.70666666666667E-14"
+        ixy="-9.07332658080703E-31"
+        ixz="2.22044604925031E-31"
+        iyy="1.70666666666667E-14"
+        iyz="-3.42644026577836E-31"
+        izz="1.70666666666667E-14" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/left_shoulder_roll_ghost.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/left_shoulder_roll_ghost.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_shoulder_roll"
+    type="continuous">
+    <origin
+      xyz="-0.08 0.018568 0.02235"
+      rpy="1.5708 0 0" />
+    <parent
+      link="torso" />
+    <child
+      link="left_shoulder_roll_ghost" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="left_shoulder_pitch_ghost">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="6.4E-11" />
+      <inertia
+        ixx="1.70666666666667E-14"
+        ixy="-1.10476587369031E-30"
+        ixz="2.22044604925031E-31"
+        iyy="1.70666666666667E-14"
+        iyz="-4.58292258309623E-31"
+        izz="1.70666666666667E-14" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/left_shoulder_pitch_ghost.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/left_shoulder_pitch_ghost.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_shoulder_pitch"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="left_shoulder_roll_ghost" />
+    <child
+      link="left_shoulder_pitch_ghost" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="left_upper_wing">
+    <inertial>
+      <origin
+        xyz="-0.0589528659250431 -0.0175535746761525 -7.49587544812691E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.00612600003399721" />
+      <inertia
+        ixx="6.98406752630042E-07"
+        ixy="-1.27189358154327E-07"
+        ixz="2.31675839231489E-12"
+        iyy="8.88423587527082E-06"
+        iyz="2.73194876642366E-13"
+        izz="9.39762886356489E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/left_upper_wing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/left_upper_wing.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_shoulder_yaw"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="3.1416 0 0" />
+    <parent
+      link="left_shoulder_pitch_ghost" />
+    <child
+      link="left_upper_wing" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="left_mid_wing">
+    <inertial>
+      <origin
+        xyz="-0.0309238874102576 -0.0478670898967761 4.70161401477931E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0118435988338924" />
+      <inertia
+        ixx="1.30936667015947E-05"
+        ixy="3.30210259795648E-06"
+        ixz="1.63589982585145E-13"
+        iyy="1.60328428980403E-05"
+        iyz="-1.13526713080384E-11"
+        izz="2.88763216840841E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/left_mid_wing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/left_mid_wing.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_elbow_yaw"
+    type="continuous">
+    <origin
+      xyz="-0.02498 -0.035 0"
+      rpy="0 0 0" />
+    <parent
+      link="left_upper_wing" />
+    <child
+      link="left_mid_wing" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="left_wrist_roll_ghost">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="6.4E-11" />
+      <inertia
+        ixx="1.70666666666667E-14"
+        ixy="3.61798264958413E-31"
+        ixz="2.22044604925031E-31"
+        iyy="1.70666666666667E-14"
+        iyz="2.22044604925031E-31"
+        izz="1.70666666666667E-14" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/left_wrist_roll_ghost.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/left_wrist_roll_ghost.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wrist_roll"
+    type="continuous">
+    <origin
+      xyz="0.051914 -0.035 0"
+      rpy="0 0 0" />
+    <parent
+      link="left_mid_wing" />
+    <child
+      link="left_wrist_roll_ghost" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="left_wrist_pitch_ghost">
+    <inertial>
+      <origin
+        xyz="0 1.38777878078145E-17 -3.46944695195361E-18"
+        rpy="0 0 0" />
+      <mass
+        value="6.4E-11" />
+      <inertia
+        ixx="1.70666666666667E-14"
+        ixy="-2.02890366544454E-31"
+        ixz="-3.42644026577836E-31"
+        iyy="1.70666666666667E-14"
+        iyz="2.22044604925032E-31"
+        izz="1.70666666666667E-14" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/left_wrist_pitch_ghost.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/left_wrist_pitch_ghost.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wrist_pitch"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="left_wrist_roll_ghost" />
+    <child
+      link="left_wrist_pitch_ghost" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="left_hand_wing">
+    <inertial>
+      <origin
+        xyz="-0.0496305425022118 -0.114426970261576 -1.63178679839227E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.00775959953779963" />
+      <inertia
+        ixx="2.04444761571868E-05"
+        ixy="5.0553608651313E-06"
+        ixz="-5.97859087320358E-10"
+        iyy="6.83432712985421E-06"
+        iyz="-1.2287128754563E-09"
+        izz="2.72012939551018E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/left_hand_wing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/left_hand_wing.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wrist_yaw"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="left_wrist_pitch_ghost" />
+    <child
+      link="left_hand_wing" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="right_shoulder_roll_ghost">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="6.4E-11" />
+      <inertia
+        ixx="1.70666666666667E-14"
+        ixy="-1.42543673623911E-30"
+        ixz="2.22044604925031E-31"
+        iyy="1.70666666666667E-14"
+        iyz="-3.42644026577836E-31"
+        izz="1.70666666666667E-14" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/right_shoulder_roll_ghost.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/right_shoulder_roll_ghost.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_shoulder_roll"
+    type="continuous">
+    <origin
+      xyz="-0.08 0.018568 -0.02235"
+      rpy="1.5708 0 0" />
+    <parent
+      link="torso" />
+    <child
+      link="right_shoulder_roll_ghost" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="right_shoulder_pitch_ghost">
+    <inertial>
+      <origin
+        xyz="1.38777878078145E-17 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="6.4E-11" />
+      <inertia
+        ixx="1.70666666666667E-14"
+        ixy="-1.6382294826256E-31"
+        ixz="2.22044604925031E-31"
+        iyy="1.70666666666667E-14"
+        iyz="3.37692836656818E-31"
+        izz="1.70666666666667E-14" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/right_shoulder_pitch_ghost.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/right_shoulder_pitch_ghost.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_shoulder_pitch"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_shoulder_roll_ghost" />
+    <child
+      link="right_shoulder_pitch_ghost" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="right_upper_wing">
+    <inertial>
+      <origin
+        xyz="-0.0589528659250431 -0.0175535746761525 -7.49587544465746E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.00612600003399721" />
+      <inertia
+        ixx="6.9840675263004E-07"
+        ixy="-1.27189358154324E-07"
+        ixz="2.3167583923794E-12"
+        iyy="8.88423587527091E-06"
+        iyz="2.73194876680364E-13"
+        izz="9.39762886356497E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/right_upper_wing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/right_upper_wing.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_shoulder_yaw"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_shoulder_pitch_ghost" />
+    <child
+      link="right_upper_wing" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="right_mid_wing">
+    <inertial>
+      <origin
+        xyz="-0.0309238874102576 -0.0478670898967761 4.70161401824876E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0118435988338924" />
+      <inertia
+        ixx="1.30936667015947E-05"
+        ixy="3.3021025979565E-06"
+        ixz="1.63589982811836E-13"
+        iyy="1.60328428980404E-05"
+        iyz="-1.13526713088109E-11"
+        izz="2.88763216840842E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/right_mid_wing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/right_mid_wing.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_elbow_yaw"
+    type="continuous">
+    <origin
+      xyz="-0.02498 -0.035 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_upper_wing" />
+    <child
+      link="right_mid_wing" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="right_wrist_roll_ghost">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="6.4E-11" />
+      <inertia
+        ixx="1.70666666666667E-14"
+        ixy="-7.67578998047321E-31"
+        ixz="2.22044604925031E-31"
+        iyy="1.70666666666667E-14"
+        iyz="-9.07332658080703E-31"
+        izz="1.70666666666667E-14" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/right_wrist_roll_ghost.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/right_wrist_roll_ghost.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wrist_roll"
+    type="continuous">
+    <origin
+      xyz="0.051914 -0.035 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_mid_wing" />
+    <child
+      link="right_wrist_roll_ghost" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="right_wrist_pitch_ghost">
+    <inertial>
+      <origin
+        xyz="6.93889390390723E-18 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="6.4E-11" />
+      <inertia
+        ixx="1.70666666666667E-14"
+        ixy="-3.70255041903799E-31"
+        ixz="2.22044604925032E-31"
+        iyy="1.70666666666667E-14"
+        iyz="-9.07332658080703E-31"
+        izz="1.70666666666667E-14" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/right_wrist_pitch_ghost.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/right_wrist_pitch_ghost.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wrist_pitch"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_wrist_roll_ghost" />
+    <child
+      link="right_wrist_pitch_ghost" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="right_hand_wing">
+    <inertial>
+      <origin
+        xyz="-0.0496305425022117 -0.114426970261576 -1.63178679839227E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.00775959953779963" />
+      <inertia
+        ixx="2.04444761571871E-05"
+        ixy="5.05536086513198E-06"
+        ixz="-5.97859087319399E-10"
+        iyy="6.83432712985444E-06"
+        iyz="-1.22871287545199E-09"
+        izz="2.72012939551023E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/right_hand_wing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pigeon_11/meshes/right_hand_wing.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wrist_yaw"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_wrist_pitch_ghost" />
+    <child
+      link="right_hand_wing" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+</robot>
