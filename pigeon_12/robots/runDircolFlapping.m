@@ -4,7 +4,7 @@ tf0 = 1;
 N = 20;
 if (nargin<1)
   options.floating = true;
-  p = RigidBodyManipulator('pigeon_10.URDF', options);
+  p = RigidBodyManipulator('pigeon_12.URDF', options);
 end
 if (nargin<2)
     utraj0 = PPTrajectory(foh(linspace(0,tf0,N),0*randn(p.getNumInputs(),N)));
