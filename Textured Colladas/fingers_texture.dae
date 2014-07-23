@@ -149,7 +149,7 @@
     </library_effects>
     <library_images>
         <image id="ID5">
-            <init_from>left_fingers_texture/Leg.jpg</init_from>
+            <init_from>fingers_texture/Leg.jpg</init_from>
         </image>
     </library_images>
     <scene>
