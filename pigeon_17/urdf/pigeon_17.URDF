@@ -24,7 +24,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/torso_texture.dae" />
+          filename="../meshes/torso_texture.STL" />
       </geometry>
       <material
         name="">
@@ -77,7 +77,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/tail_texture.dae" />
+          filename="../meshes/tail_texture.STL" />
       </geometry>
       <material
         name="">
@@ -167,7 +167,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_upper_wing_texture.dae" />
+          filename="../meshes/left_upper_wing_texture.STL" />
       </geometry>
       <material
         name="">
@@ -213,7 +213,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_mid_wing_texture.dae" />
+          filename="../meshes/left_mid_wing_texture.STL" />
       </geometry>
       <material
         name="">
@@ -303,7 +303,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_hand_wing_texture.dae" />
+          filename="../meshes/left_hand_wing_texture.STL" />
       </geometry>
       <material
         name="">
@@ -393,7 +393,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_upper_wing_texture.dae" />
+          filename="../meshes/left_upper_wing_texture.STL" />
       </geometry>
       <material
         name="">
@@ -439,7 +439,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_mid_wing_texture.dae" />
+          filename="../meshes/left_mid_wing_texture.STL" />
       </geometry>
       <material
         name="">
@@ -529,7 +529,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_hand_wing_texture.dae" />
+          filename="../meshes/left_hand_wing_texture.STL" />
       </geometry>
       <material
         name="">
@@ -597,7 +597,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/upper_leg_texture.dae" />
+          filename="../meshes/upper_leg_texture.STL" />
       </geometry>
       <material
         name="">
@@ -643,7 +643,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/mid_leg_texture.dae" />
+          filename="../meshes/mid_leg_texture.STL" />
       </geometry>
       <material
         name="">
@@ -689,7 +689,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/lower_leg_texture.dae" />
+          filename="../meshes/lower_leg_texture.STL" />
       </geometry>
       <material
         name="">
@@ -735,7 +735,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/thumb_texture.dae" />
+          filename="../meshes/thumb_texture.STL" />
       </geometry>
       <material
         name="">
@@ -781,7 +781,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/fingers_texture.dae" />
+          filename="../meshes/fingers_texture.STL" />
       </geometry>
       <material
         name="">
@@ -849,7 +849,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/upper_leg_texture.dae" />
+          filename="../meshes/upper_leg_texture.STL" />
       </geometry>
       <material
         name="">
@@ -895,7 +895,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/mid_leg_texture.dae" />
+          filename="../meshes/mid_leg_texture.STL" />
       </geometry>
       <material
         name="">
@@ -941,7 +941,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/lower_leg_texture.dae" />
+          filename="../meshes/lower_leg_texture.STL" />
       </geometry>
       <material
         name="">
@@ -987,7 +987,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/thumb_texture.dae" />
+          filename="../meshes/thumb_texture.STL" />
       </geometry>
       <material
         name="">
@@ -1033,7 +1033,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/fingers_texture.dae" />
+          filename="../meshes/fingers_texture.STL" />
       </geometry>
       <material
         name="">
