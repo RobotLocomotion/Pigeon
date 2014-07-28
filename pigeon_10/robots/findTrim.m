@@ -1,7 +1,9 @@
-function [ xstar,ustar ] = findTrim( )
+function [xstar, ustar] = findTrim(p)
 
-options.floating = true;
-p = RigidBodyManipulator('pigeon_10.URDF', options);
+if (nargin<1)
+  options.floating = true;
+  p = RigidBodyManipulator('pigeon_10.URDF', options);
+end
 
 prog = FixedPointProgram(p,[1;3]);  % ignores xdot and zdot constraints
 
@@ -12,8 +14,8 @@ ub = [0 0 5 1.5 0 1.5 1.5*ones(1,15) ...
     30 0 0 0 0 0 zeros(1,15) ...
     Inf*ones(1,15)]';
 
-prog = addBoundingBoxConstraint(prog,BoundingBoxConstraint(lb,ub));
-prog = addDifferentiableConstraint(prog,FunctionHandleObjective(57,@cost));
+prog = addConstraint(prog,BoundingBoxConstraint(lb,ub));
+prog = addConstraint(prog,FunctionHandleObjective(57,@cost));
 
 x0 = Point(getStateFrame(p),zeros(42,1));
 x0.base_xdot = 20;
@@ -24,12 +26,14 @@ w = prog.solve([double(x0);u0]);
 xstar = w(1:42);
 ustar = w(43:end);
 
-utraj = ConstantTrajectory(ustar);
-utraj = setOutputFrame(utraj,getInputFrame(p));
-sys = cascade(utraj,p);
-xtraj = simulate(sys,[0 .1],xstar);
-v = p.constructVisualizer(); 
-v.playback(xtraj, struct('slider',true));
+if (nargout<1)
+  utraj = ConstantTrajectory(ustar);
+  utraj = setOutputFrame(utraj,getInputFrame(p));
+  sys = cascade(utraj,p);
+  xtraj = simulate(sys,[0 .1],xstar);
+  v = p.constructVisualizer(); 
+  v.playback(xtraj, struct('slider',true));
+end
 
 end
 
