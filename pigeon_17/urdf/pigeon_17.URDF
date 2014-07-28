@@ -1103,6 +1103,36 @@
     <actuator name="left_wrist_yaw_servo"/>
     <mechanicalReduction>1</mechanicalReduction>
   </transmission>
+  <transmission name="left_hip_roll_torque" type="SimpleTransmission" >
+    <joint name="left_hip_roll" />
+    <actuator name="left_hip_roll_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="left_hip_pitch_torque" type="SimpleTransmission" >
+    <joint name="left_hip_pitch" />
+    <actuator name="left_hip_pitch_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="left_knee_pitch_torque" type="SimpleTransmission" >
+    <joint name="left_knee_pitch" />
+    <actuator name="left_knee_pitch_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="left_ankle_pitch_torque" type="SimpleTransmission" >
+    <joint name="left_ankle_pitch" />
+    <actuator name="left_ankle_pitch_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="left_thumb_pitch_torque" type="SimpleTransmission" >
+    <joint name="left_thumb_pitch" />
+    <actuator name="left_thumb_pitch_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="left_fingers_pitch_torque" type="SimpleTransmission" >
+    <joint name="left_fingers_pitch" />
+    <actuator name="left_fingers_pitch_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
   <transmission name="right_shoulder_roll_torque" type="SimpleTransmission" >
     <joint name="right_shoulder_roll" />
     <actuator name="right_shoulder_roll_servo"/>
@@ -1136,6 +1166,36 @@
   <transmission name="right_wrist_yaw_torque" type="SimpleTransmission" >
     <joint name="right_wrist_yaw" />
     <actuator name="right_wrist_yaw_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="right_hip_roll_torque" type="SimpleTransmission" >
+    <joint name="right_hip_roll" />
+    <actuator name="right_hip_roll_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="right_hip_pitch_torque" type="SimpleTransmission" >
+    <joint name="right_hip_pitch" />
+    <actuator name="right_hip_pitch_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="right_knee_pitch_torque" type="SimpleTransmission" >
+    <joint name="right_knee_pitch" />
+    <actuator name="right_knee_pitch_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="right_ankle_pitch_torque" type="SimpleTransmission" >
+    <joint name="right_ankle_pitch" />
+    <actuator name="right_ankle_pitch_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="right_thumb_pitch_torque" type="SimpleTransmission" >
+    <joint name="right_thumb_pitch" />
+    <actuator name="right_thumb_pitch_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="right_fingers_pitch_torque" type="SimpleTransmission" >
+    <joint name="right_fingers_pitch" />
+    <actuator name="right_fingers_pitch_servo"/>
     <mechanicalReduction>1</mechanicalReduction>
   </transmission>
 
@@ -1224,6 +1284,36 @@
       <joint name="left_wrist_yaw" />
     </torsional_spring>
   </force_element>
+  <force_element name="left_hip_roll_spring">
+    <torsional_spring stiffness="0.005" rest_angle="0">
+      <joint name="left_hip_roll" />
+    </torsional_spring>
+  </force_element>
+  <force_element name="left_hip_pitch_spring">
+    <torsional_spring stiffness="0.005" rest_angle="0">
+      <joint name="left_hip_pitch" />
+    </torsional_spring>
+  </force_element>
+  <force_element name="left_knee_pitch_spring">
+    <torsional_spring stiffness="0.005" rest_angle="0">
+      <joint name="left_knee_pitch" />
+    </torsional_spring>
+  </force_element>
+  <force_element name="left_ankle_pitch_spring">
+    <torsional_spring stiffness="0.005" rest_angle="0">
+      <joint name="left_ankle_pitch" />
+    </torsional_spring>
+  </force_element>
+  <force_element name="left_thumb_pitch_spring">
+    <torsional_spring stiffness="0.005" rest_angle="0">
+      <joint name="left_thumb_pitch" />
+    </torsional_spring>
+  </force_element>
+  <force_element name="left_fingers_pitch_spring">
+    <torsional_spring stiffness="0.005" rest_angle="0">
+      <joint name="left_fingers_pitch" />
+    </torsional_spring>
+  </force_element>
   <force_element name="right_shoulder_roll_spring">
     <torsional_spring stiffness="0.1" rest_angle="0">
       <joint name="right_shoulder_roll" />
@@ -1257,6 +1347,36 @@
   <force_element name="right_wrist_yaw_spring">
     <torsional_spring stiffness="0.005" rest_angle="0">
       <joint name="right_wrist_yaw" />
+    </torsional_spring>
+  </force_element>
+  <force_element name="right_hip_roll_spring">
+    <torsional_spring stiffness="0.005" rest_angle="0">
+      <joint name="right_hip_roll" />
+    </torsional_spring>
+  </force_element>
+  <force_element name="right_hip_pitch_spring">
+    <torsional_spring stiffness="0.005" rest_angle="0">
+      <joint name="right_hip_pitch" />
+    </torsional_spring>
+  </force_element>
+  <force_element name="right_knee_pitch_spring">
+    <torsional_spring stiffness="0.005" rest_angle="0">
+      <joint name="right_knee_pitch" />
+    </torsional_spring>
+  </force_element>
+  <force_element name="right_ankle_pitch_spring">
+    <torsional_spring stiffness="0.005" rest_angle="0">
+      <joint name="right_ankle_pitch" />
+    </torsional_spring>
+  </force_element>
+  <force_element name="right_thumb_pitch_spring">
+    <torsional_spring stiffness="0.005" rest_angle="0">
+      <joint name="right_thumb_pitch" />
+    </torsional_spring>
+  </force_element>
+  <force_element name="right_fingers_pitch_spring">
+    <torsional_spring stiffness="0.005" rest_angle="0">
+      <joint name="right_fingers_pitch" />
     </torsional_spring>
   </force_element>
 </robot>
