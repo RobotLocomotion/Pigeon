@@ -1,0 +1,19 @@
+Unfortunately, the process of adding textures to the CAD files is far from straightforward. After adding textures in Solidworks, I found that you cannot actually
+export them to any other program, making that whole process a waste of time. Instead, I did what I describe below, though I'm sure there has to be a better way.
+
+1) Export URDF as described in other document
+
+2) Use convert_stl_dae.sh script to create untextured COLLADA (.dae) files
+
+3) In Trimble Sketchup (previously Google Sketchup)
+    a) Import the COLLADA files just generated into Sketchup
+    b) Fix any holes in the mesh if you notice them using the "Line Tool" to retrace lines in the mesh, forcing the program to redraw faces between them.
+      The process of exporting to .dae files before bringing them into Solidworks minimized the number of these holes, as the Sketchup STL import feature
+      is very buggy and only captures about 50% of the faces.
+    c) Import the image file you wish to use as a texture to Sketchup, and position it as you would want to project it onto the mesh.
+    d) Right click and "explode" both of the components (the mesh and the image)
+    e) Select the "Paint bucket" tool, and hold down "Alt" while clicking on the image
+    f) Hold down "Ctrl" and click on the mesh, the texture should apply.
+    g) Export the model as a COLLADA (.dae) file again. It will now have textures
+
+4) Run through Pat Marion's script to get the files into a format that drake can work with (I actually don't know what his script does, I just know it works)
