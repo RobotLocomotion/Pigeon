@@ -1080,6 +1080,11 @@
       damping="0.0005" />
   </joint>
 
+  <transmission name="tail_roll_torque" type="SimpleTransmission" >
+    <joint name="tail_roll" />
+    <actuator name="tail_roll_servo"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
   <transmission name="tail_pitch_torque" type="SimpleTransmission" >
     <joint name="tail_pitch" />
     <actuator name="tail_pitch_servo"/>
@@ -1261,16 +1266,21 @@
   	<origin xyz="0 0 0" rpy="0 0 0"/> 
     </wing> 
   </force_element>
+<!--  <force_element name="tail_roll_spring">
+    <torsional_spring stiffness="0.005" rest_angle="0">
+      <joint name="tail_roll" />
+    </torsional_spring>
+  </force_element> -->
   <force_element name="tail_pitch_spring">
     <torsional_spring stiffness="0.005" rest_angle="0">
       <joint name="tail_pitch" />
     </torsional_spring>
   </force_element>
-  <force_element name="tail_yaw_spring">
+<!--  <force_element name="tail_yaw_spring">
     <torsional_spring stiffness="0.005" rest_angle="0">
       <joint name="tail_yaw" />
     </torsional_spring>
-  </force_element>
+  </force_element> -->
   <force_element name="left_shoulder_roll_spring">
     <torsional_spring stiffness="0.1" rest_angle="0">
       <joint name="left_shoulder_roll" />
@@ -1306,7 +1316,7 @@
       <joint name="left_wrist_yaw" />
     </torsional_spring>
   </force_element>
-  <force_element name="left_hip_roll_spring">
+<!--  <force_element name="left_hip_roll_spring">
     <torsional_spring stiffness="0.005" rest_angle="0">
       <joint name="left_hip_roll" />
     </torsional_spring>
@@ -1335,7 +1345,7 @@
     <torsional_spring stiffness="0.005" rest_angle="0">
       <joint name="left_fingers_pitch" />
     </torsional_spring>
-  </force_element>
+  </force_element> -->
   <force_element name="right_shoulder_roll_spring">
     <torsional_spring stiffness="0.1" rest_angle="0">
       <joint name="right_shoulder_roll" />
@@ -1371,7 +1381,7 @@
       <joint name="right_wrist_yaw" />
     </torsional_spring>
   </force_element>
-  <force_element name="right_hip_roll_spring">
+<!--  <force_element name="right_hip_roll_spring">
     <torsional_spring stiffness="0.005" rest_angle="0">
       <joint name="right_hip_roll" />
     </torsional_spring>
@@ -1400,5 +1410,5 @@
     <torsional_spring stiffness="0.005" rest_angle="0">
       <joint name="right_fingers_pitch" />
     </torsional_spring>
-  </force_element>
+  </force_element> -->
 </robot>
