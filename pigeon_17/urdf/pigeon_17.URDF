@@ -34,6 +34,28 @@
     </visual>
   </link>
   <link
+    name="tail_roll_ghost">
+    <inertial>
+       <mass
+        value="0" />
+    </inertial>
+  </link>
+  <joint
+    name="tail_roll"
+    type="continuous">
+    <origin
+      xyz="-0.21 0 -0.0185680248036409"
+      rpy="0 0 0" />
+    <parent
+      link="torso" />
+    <child
+      link="tail_roll_ghost" />
+    <axis
+      xyz="-1 0 0" />
+    <dynamics
+      damping="0.0007" />
+  </joint>
+  <link
     name="tail_pitch_ghost">
     <inertial>
        <mass
@@ -44,10 +66,10 @@
     name="tail_pitch"
     type="continuous">
     <origin
-      xyz="-0.21 0 -0.0185680248036409"
+      xyz="0 0 0"
       rpy="0 0 0" />
     <parent
-      link="torso" />
+      link="tail_roll_ghost" />
     <child
       link="tail_pitch_ghost" />
     <axis
