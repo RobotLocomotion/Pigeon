@@ -58,5 +58,5 @@ function [c,dc] = cost(x)
     xdot = x(36);
     zdot = x(28);
     c = zdot/xdot;
-    dc = [zeros(1,35) -zdot/xdot^2 0 1/xdot zeros(1,32) zeros(1,29)];
+    dc = [zeros(1,35) -zdot/xdot^2 0 1/xdot zeros(1,61)];
 end
