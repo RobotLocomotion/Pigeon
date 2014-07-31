@@ -15,14 +15,14 @@ ub = [0 0 5 0 0 0 1.5*ones(1,29) ...
     30 0 0 0 0 0 zeros(1,29) ...
     Inf*ones(1,29)]';
 
-A = [zeros(1,9) 1 zeros(1,6) -1 zeros(1,82);    % constraints for symmetry
+A = [zeros(1,9) 1 zeros(1,6) 1 zeros(1,82);    % constraints for symmetry
      zeros(1,10) 1 zeros(1,6) -1 zeros(1,81);
      zeros(1,11) 1 zeros(1,6) -1 zeros(1,80);
      zeros(1,12) 1 zeros(1,6) -1 zeros(1,79);
      zeros(1,13) 1 zeros(1,6) -1 zeros(1,78);
-     zeros(1,14) 1 zeros(1,6) -1 zeros(1,77);
-     zeros(1,15) 1 zeros(1,6) -1 zeros(1,76);
-     zeros(1,23) 1 zeros(1,5) -1 zeros(1,69);
+     zeros(1,14) 1 zeros(1,6) 1 zeros(1,77);
+     zeros(1,15) 1 zeros(1,6) 1 zeros(1,76);
+     zeros(1,23) 1 zeros(1,5) 1 zeros(1,69);
      zeros(1,24) 1 zeros(1,5) -1 zeros(1,68);
      zeros(1,25) 1 zeros(1,5) -1 zeros(1,67);
      zeros(1,26) 1 zeros(1,5) -1 zeros(1,66);
@@ -47,7 +47,7 @@ if (nargout<1)
   utraj = ConstantTrajectory(ustar);
   utraj = setOutputFrame(utraj,getInputFrame(p));
   sys = cascade(utraj,p);
-  xtraj = simulate(sys,[0 .02],xstar);
+  xtraj = simulate(sys,[0 .45],xstar);
   v = p.constructVisualizer(); 
   v.playback(xtraj, struct('slider',true));
 end

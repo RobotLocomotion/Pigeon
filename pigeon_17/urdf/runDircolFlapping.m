@@ -1,7 +1,7 @@
 function [utraj, xtraj] = runDircolFlapping
 
 options.floating = true;
-p = RigidBodyManipulator('pigeon_12.URDF', options);
+p = RigidBodyManipulator('pigeon_17.URDF', options);
 
 N = 11;
 minimum_duration = .1;
