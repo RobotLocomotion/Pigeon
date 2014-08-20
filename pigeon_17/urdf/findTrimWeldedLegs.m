@@ -82,7 +82,7 @@ addSymmetricConstraint('left_shoulder_roll','right_shoulder_roll');
 addSymmetricConstraint('left_shoulder_pitch','right_shoulder_pitch');
 addSymmetricConstraint('left_shoulder_yaw','right_shoulder_yaw');
 addSymmetricConstraint('left_elbow_yaw','right_elbow_yaw');
-addSymmetricConst nUraint('left_wrist_roll','right_wrist_roll');
+addSymmetricConstraint('left_wrist_roll','right_wrist_roll');
 addSymmetricConstraint('left_wrist_pitch','right_wrist_pitch');
 addSymmetricConstraint('left_wrist_yaw','right_wrist_yaw');
 
@@ -90,7 +90,7 @@ addSymmetricConstraint('left_wrist_yaw','right_wrist_yaw');
 xdot_ind = findCoordinateIndex(getStateFrame(p),'base_xdot');
 zdot_ind = findCoordinateIndex(getStateFrame(p),'base_zdot');
  
-prog = addConstraint(prog,BoundingBoxConstraint(lb,ub));
+prog = addConstraint(prog,BoundingBoxConstraint(double(lb),double(ub)));
 prog = addConstraint(prog,FunctionHandleObjective(57,@(x)cost(x,xdot_ind,zdot_ind)));
 prog = addConstraint(prog,LinearConstraint(zeros(7,1),zeros(7,1),A));
 
@@ -99,7 +99,7 @@ x0.base_xdot = 20;
 x0.base_z = 5;
 num_inputs = getNumInputs(p);
 num_states = getNumStates(p);
-u0 = zeros(nU,1);
+u0 = zeros(num_inputs,1);
 
 w = prog.solve([double(x0);u0]); 
 xstar = w(1:num_states);
